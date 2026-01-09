@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231: Web Frontend Development I | Jeffrey Gallardo</title>
+    <meta name="description" content="Course portfolio for WDD 231">
+    <meta name="author" content="Jeffrey Gallardo">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">BYU Pathway</div>
+            <span class="student-name">Jeffrey Gallardo</span>
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="chamber.html">Chamber</a></li>
+            <li><a href="final.html">Final</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+        
+        <!-- Chamber Logo in Middle -->
+        <div class="chamber-logo-section">
+            <img src="images/chamber.png" alt="Chamber of Commerce" class="chamber-logo">
+            <p class="chamber-text">Chamber of Commerce</p>
+        </div>
+        
+        <section class="card">
+            <h2>About Me</h2>
+            <p>Software developer student focusing on AI and machine learning at BYU Pathway Worldwide.</p>
+        </section>
+        
+        <section class="card">
+            <h2>Location</h2>
+            <p>📍 Rexburg, Idaho</p>
+            <p> Chamber of Commerce</p>
+        </section>
+        
+        <section class="card">
+            <h2>Certificate Courses</h2>
+            
+            <div class="filter-btns">
+                <button id="allBtn">All Courses</button>
+                <button id="wddBtn">WDD Courses</button>
+                <button id="cseBtn">CSE Courses</button>
+            </div>
+            
+            <!-- COURSES GO HERE -->
+            <div id="coursesContainer"></div>
+            
+            <p>Total Credits: <span id="totalCredits">0</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social">
+            <a href="https://github.com/jeffreygallardo">GitHub</a> | 
+            <a href="https://linkedin.com/in/jeffreygallardo">LinkedIn</a>
+        </div>
+        
+        <p>&copy; <span id="currentYear"></span> Jeffrey Gallardo - Idaho</p>
+        <p id="lastModified">Last Modified: </p>
+    </footer>
+</body>
+</html>
