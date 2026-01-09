@@ -1,0 +1,39 @@
+@media (min-width: 768px) {
+    .menu-btn {
+        display: none;
+    }
+    
+    nav {
+        display: block;
+        background: #003366;
+    }
+    
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav li {
+        border: none;
+        padding: 15px 25px;
+    }
+    
+    nav a {
+        color: white;
+    }
+    
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 30px;
+    }
+    
+    h1 {
+        grid-column: 1 / -1;
+    }
+    
+    .chamber-logo-section {
+        grid-column: 1 / -1;
+    }
+}

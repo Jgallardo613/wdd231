@@ -1,0 +1,194 @@
+/* styles/small.css - COMPLETE FILE */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Header */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 15px 20px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: auto;
+    height: 40px;
+    background: #002E5D;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 0 15px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.student-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 15px;
+    flex-grow: 1;
+}
+
+.menu-btn {
+    background: white;
+    color: #003366;
+    border: none;
+    padding: 8px 15px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Navigation */
+nav {
+    background: #f0f0f0;
+    display: none;
+}
+
+nav.show {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+nav a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #003366;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Chamber Logo - BIGGER */
+.chamber-logo-section {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: lightblue;
+    border-radius: 15px;
+    border: 3px solid #003366;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.chamber-logo {
+    max-width: 500px; /* BIGGER */
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.chamber-text {
+    color: #003366;
+    font-size: 24px; /* BIGGER */
+    font-weight: bold;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+/* Filter Buttons */
+.filter-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btns button {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.filter-btns button:hover {
+    background: #004488;
+}
+
+/* Courses Container */
+#coursesContainer {
+    min-height: 100px;
+    margin-bottom: 20px;
+}
+
+.course {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border-left: 5px solid;
+}
+
+.completed {
+    background: #d4ffd4;
+    border-left-color: green;
+}
+
+.not-completed {
+    background: #ffd4d4;
+    border-left-color: red;
+}
+
+/* Footer */
+footer {
+    background: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social a {
+    color: white;
+    margin: 0 10px;
+}
