@@ -1,4 +1,4 @@
-/* styles/small.css - COMPLETE FILE */
+/* styles/small.css - FIXED COLOR CONTRAST */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -50,9 +50,9 @@ header {
     cursor: pointer;
 }
 
-/* Navigation */
+/* Navigation - FIXED CONTRAST */
 nav {
-    background: #f0f0f0;
+    background: #003366; /* Changed from #f0f0f0 to match header */
     display: none;
 }
 
@@ -68,14 +68,19 @@ nav ul {
 
 nav li {
     padding: 12px 20px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #002244; /* Darker blue border */
 }
 
 nav a {
-    color: #003366;
+    color: white; /* Changed from #003366 to white */
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
+    display: block;
+}
+
+nav a:hover {
+    background-color: #002244; /* Hover effect */
 }
 
 /* Main Content */
@@ -91,19 +96,19 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Chamber Logo - BIGGER */
+/* Chamber Logo */
 .chamber-logo-section {
     text-align: center;
     margin: 40px 0;
     padding: 30px;
-    background: lightblue;
+    background: white;
     border-radius: 15px;
     border: 3px solid #003366;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .chamber-logo {
-    max-width: 500px; /* BIGGER */
+    max-width: 300px;
     width: 100%;
     height: auto;
     margin-bottom: 20px;
@@ -112,7 +117,7 @@ h1 {
 
 .chamber-text {
     color: #003366;
-    font-size: 24px; /* BIGGER */
+    font-size: 24px;
     font-weight: bold;
     margin-top: 15px;
     text-transform: uppercase;
