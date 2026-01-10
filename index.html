@@ -28,13 +28,13 @@
         <div class="header-content">
             <div class="logo">BYU Pathway</div>
             <span class="student-name">Jeffrey Gallardo</span>
-            <button class="menu-btn" id="menuBtn">☰</button>
+            <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">☰ Open Menu</button>
         </div>
     </header>
 
     <nav id="mainNav">
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="chamber.html">Chamber</a></li>
             <li><a href="final.html">Final</a></li>
         </ul>
@@ -43,37 +43,55 @@
     <main>
         <h1>Home</h1>
         
-        <!-- Chamber Logo in Middle -->
-        <div class="chamber-logo-section">
-            <img src="images/chamber.png" alt="Chamber of Commerce" class="chamber-logo">
-            <p class="chamber-text">Chamber of Commerce</p>
-        </div>
-        
-        <section class="card">
-            <h2>About Me</h2>
-            <p>Software developer student focusing on AI and machine learning at BYU Pathway Worldwide.</p>
-        </section>
-        
-        <section class="card">
-            <h2>Location</h2>
-            <p>📍 Rexburg, Idaho</p>
-            <p>Home to the Rexburg Chamber of Commerce</p>
-        </section>
-        
-        <section class="card">
-            <h2>Certificate Courses</h2>
-            
-            <div class="filter-btns">
-                <button id="allBtn">All Courses</button>
-                <button id="wddBtn">WDD Courses</button>
-                <button id="cseBtn">CSE Courses</button>
+        <!-- Chamber Logo in Middle - Centered -->
+        <section class="chamber-logo-section">
+            <div class="chamber-logo-container">
+                <img src="images/chamber.png" alt="Chamber of Commerce" class="chamber-logo">
             </div>
-            
-            <!-- COURSES GO HERE -->
-            <div id="coursesContainer"></div>
-            
-            <p>Total Credits: <span id="totalCredits">0</span></p>
+            <p class="chamber-text">Chamber of Commerce Website Project</p>
         </section>
+        
+        <div class="cards-container">
+            <!-- Current Progress Section -->
+            <section class="card progress-card">
+                <h2>Current Progress</h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%"></div>
+                </div>
+                <p>40% of certificate completed</p>
+                <p>2 of 5 courses finished</p>
+            </section>
+            
+            <section class="card">
+                <h2>About Me</h2>
+                <p>Software developer student focusing on AI and machine learning at BYU Pathway Worldwide.</p>
+                <p>Currently building a Chamber of Commerce website for WDD 231.</p>
+            </section>
+            
+            <section class="card">
+                <h2>Location</h2>
+                <p>📍 Rexburg, Idaho</p>
+                <p>Home to the Rexburg Chamber of Commerce</p>
+                <p>United States</p>
+            </section>
+            
+            <section class="card">
+                <h2>Certificate Courses</h2>
+                <p>Web & Computer Programming Certificate</p>
+                
+                <div class="filter-btns">
+                    <button id="allBtn">All Courses</button>
+                    <button id="wddBtn">WDD Courses</button>
+                    <button id="cseBtn">CSE Courses</button>
+                </div>
+                
+                <!-- COURSES GO HERE -->
+                <div id="coursesContainer"></div>
+                
+                <p>Total Credits: <span id="totalCredits">0</span></p>
+                <p class="note">Click buttons to filter courses and update credit totals</p>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -84,6 +102,7 @@
         
         <p>&copy; <span id="currentYear"></span> Jeffrey Gallardo - Idaho</p>
         <p id="lastModified">Last Modified: </p>
+        <p class="course-info">WDD 231 - Web Frontend Development I</p>
     </footer>
 </body>
 </html>
