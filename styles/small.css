@@ -1,58 +1,55 @@
-/* styles/small.css - FIXED COLOR CONTRAST */
-body {
-    font-family: 'Roboto', sans-serif;
+/* Base Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
     background-color: #f5f5f5;
 }
 
 /* Header */
 header {
-    background-color: #003366;
+    background-color: #002244;
     color: white;
-    padding: 15px 20px;
+    padding: 1rem;
+    position: relative;
 }
 
 .header-content {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
-    width: auto;
-    height: 40px;
-    background: #002E5D;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 1.5rem;
     font-weight: bold;
-    padding: 0 15px;
-    border-radius: 5px;
-    font-size: 16px;
 }
 
 .student-name {
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 15px;
-    flex-grow: 1;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .menu-btn {
-    background: white;
-    color: #003366;
+    background: none;
     border: none;
-    padding: 8px 15px;
-    font-size: 18px;
-    border-radius: 4px;
+    color: white;
+    font-size: 1.5rem;
     cursor: pointer;
+    padding: 0.5rem;
 }
 
-/* Navigation - FIXED CONTRAST */
+/* Navigation */
 nav {
-    background: #003366; /* Changed from #f0f0f0 to match header */
+    background-color: #003366;
     display: none;
 }
 
@@ -62,138 +59,304 @@ nav.show {
 
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 nav li {
-    padding: 12px 20px;
-    border-bottom: 1px solid #002244; /* Darker blue border */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 nav a {
-    color: white; /* Changed from #003366 to white */
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
     display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
-    background-color: #002244; /* Hover effect */
+    background-color: #004488;
+}
+
+/* Mobile hamburger menu active state */
+nav a.active {
+    background-color: #002244;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a.active::before {
+    content: "▶";
+    position: absolute;
+    left: 5px;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    nav a.active::before {
+        content: none;
+    }
 }
 
 /* Main Content */
 main {
-    padding: 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 h1 {
-    color: #003366;
+    color: #002244;
+    margin-bottom: 1rem;
     text-align: center;
-    margin-bottom: 30px;
-}
-
-/* Chamber Logo */
-.chamber-logo-section {
-    text-align: center;
-    margin: 40px 0;
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    border: 3px solid #003366;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.chamber-logo {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-.chamber-text {
-    color: #003366;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    grid-column: 1 / -1;
 }
 
 /* Cards */
 .card {
     background: white;
-    border: 1px solid #ddd;
     border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    color: #002244;
+    margin-bottom: 1rem;
+}
+
+/* Progress Card */
+.progress-card {
+    grid-column: 1 / -1;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #28a745;
+    border-radius: 10px;
+}
+
+/* Chamber Logo Section - Centered and Larger */
+.chamber-logo-section {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.chamber-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.chamber-logo {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #f8f9fa;
     padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 5px solid #003366;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    color: #0066cc;
-    margin-bottom: 15px;
+.chamber-text {
+    font-size: 1.8rem;
+    color: #002244;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-align: center;
 }
 
-/* Filter Buttons */
+/* Course Filter Buttons */
 .filter-btns {
     display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
 }
 
 .filter-btns button {
-    background: #003366;
+    background-color: #003366;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 .filter-btns button:hover {
-    background: #004488;
+    background-color: #004488;
 }
 
-/* Courses Container */
-#coursesContainer {
-    min-height: 100px;
-    margin-bottom: 20px;
-}
-
+/* Course List */
 .course {
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border-left: 5px solid;
+    background: #f8f9fa;
+    border-left: 4px solid #003366;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
 }
 
-.completed {
-    background: #d4ffd4;
-    border-left-color: green;
+.course.completed {
+    border-left-color: #28a745;
 }
 
-.not-completed {
-    background: #ffd4d4;
-    border-left-color: red;
+.course h3 {
+    color: #002244;
+    margin-bottom: 0.5rem;
+}
+
+.course p {
+    color: #666;
+    margin: 0.25rem 0;
 }
 
 /* Footer */
 footer {
-    background: #003366;
+    background-color: #002244;
     color: white;
-    padding: 20px;
     text-align: center;
-    margin-top: 30px;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+.social {
+    margin-bottom: 1rem;
 }
 
 .social a {
     color: white;
-    margin: 0 10px;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.social a:hover {
+    text-decoration: underline;
+}
+
+.course-info {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #cccccc;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .header-content {
+        flex-wrap: wrap;
+    }
+    
+    .menu-btn {
+        margin-left: auto;
+    }
+    
+    .chamber-logo {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .chamber-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-btn {
+        display: none;
+    }
+    
+    nav {
+        display: block;
+        background-color: #003366;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    nav li {
+        border-bottom: none;
+    }
+    
+    nav a {
+        padding: 1rem 2rem;
+    }
+    
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .chamber-logo {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .chamber-text {
+        font-size: 2rem;
+    }
+    
+    .progress-card {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .chamber-logo {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .chamber-text {
+        font-size: 2.2rem;
+    }
+    
+    .chamber-logo-section {
+        margin: 3rem auto;
+        padding: 3rem;
+    }
+    
+    .progress-card {
+        grid-column: 1 / -1;
+    }
+    
+    .card:nth-child(3) {
+        grid-column: 2 / 4;
+    }
+    
+    .card:nth-child(4) {
+        grid-column: 1 / 3;
+    }
 }
