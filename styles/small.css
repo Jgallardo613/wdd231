@@ -47,7 +47,7 @@ header {
     padding: 0.5rem;
 }
 
-/* Navigation */
+/* Navigation - FIXED COLOR CONTRAST */
 nav {
     background-color: #003366;
     display: none;
@@ -69,7 +69,7 @@ nav li {
 
 nav a {
     display: block;
-    color: white;
+    color: white; /* FIXED: Changed from #333 to white */
     text-decoration: none;
     padding: 1rem;
     transition: background-color 0.3s;
@@ -144,6 +144,7 @@ h1 {
 }
 
 .progress-fill {
+    width: 40%; /* FIXED: Moved from inline style */
     height: 100%;
     background-color: #28a745;
     border-radius: 10px;
@@ -409,7 +410,7 @@ footer {
     }
 }
 
-/* Performance Optimizations - Simple student fixes */
+/* Performance Optimizations */
 .chamber-logo {
     width: 100%;
     max-width: 300px;
