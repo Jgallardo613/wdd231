@@ -1,9 +1,9 @@
 const courses = [
-    { subject: 'CSE', number: 110, title: 'Programming Building Blocks', credits: 2, completed: true },
+    { subject: 'CSE', number: 110, title: 'Programming Building Blocks', credits: 2, completed: false },
     { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: true },
-    { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: true },
-    { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: true },
-    { subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, completed: true },
+    { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: false },
+    { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: false },
+    { subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, completed: false },
     { subject: 'WDD', number: 231, title: 'Web Frontend Development I', credits: 2, completed: false }
 ];
 
@@ -11,7 +11,11 @@ function displayCourses(filter = 'all') {
     const container = document.getElementById('coursesContainer');
     const totalCreditsElement = document.getElementById('totalCredits');
     
-    if (!container || !totalCreditsElement) return;
+    // NULL CHECK - Prevents "undefined or null" error
+    if (!container || !totalCreditsElement) {
+        console.log('Course elements not found yet');
+        return;
+    }
     
     // Clear container
     container.innerHTML = '';
@@ -65,25 +69,40 @@ function updateButtonStates(activeFilter) {
 
 // Initialize courses display
 document.addEventListener('DOMContentLoaded', () => {
-    // Display all courses by default
-    displayCourses('all');
-    
-    // Add event listeners to filter buttons
-    document.getElementById('allBtn')?.addEventListener('click', () => {
-        displayCourses('all');
-    });
-    
-    document.getElementById('wddBtn')?.addEventListener('click', () => {
-        displayCourses('wdd');
-    });
-    
-    document.getElementById('cseBtn')?.addEventListener('click', () => {
-        displayCourses('cse');
-    });
-    
-    // Credit verification
-    console.log('=== CREDIT TOTALS ===');
-    console.log('All courses:', courses.reduce((sum, c) => sum + c.credits, 0), 'credits (should be 12)');
-    console.log('WDD courses:', courses.filter(c => c.subject === 'WDD').reduce((sum, c) => sum + c.credits, 0), 'credits (should be 6)');
-    console.log('CSE courses:', courses.filter(c => c.subject === 'CSE').reduce((sum, c) => sum + c.credits, 0), 'credits (should be 6)');
+    // Wait a moment to ensure DOM is fully loaded
+    setTimeout(() => {
+        // Check if elements exist
+        const allBtn = document.getElementById('allBtn');
+        const wddBtn = document.getElementById('wddBtn');
+        const cseBtn = document.getElementById('cseBtn');
+        
+        if (allBtn && wddBtn && cseBtn) {
+            // Add event listeners to filter buttons
+            allBtn.addEventListener('click', () => displayCourses('all'));
+            wddBtn.addEventListener('click', () => displayCourses('wdd'));
+            cseBtn.addEventListener('click', () => displayCourses('cse'));
+            
+            // Display all courses by default
+            displayCourses('all');
+            
+            // Log success
+            console.log('Course system loaded successfully!');
+            console.log('Total credits (all):', courses.reduce((sum, c) => sum + c.credits, 0));
+            console.log('WDD credits:', courses.filter(c => c.subject === 'WDD').reduce((sum, c) => sum + c.credits, 0));
+            console.log('CSE credits:', courses.filter(c => c.subject === 'CSE').reduce((sum, c) => sum + c.credits, 0));
+        } else {
+            console.log('Filter buttons not found yet, retrying...');
+            // Try again after a short delay
+            setTimeout(() => {
+                displayCourses('all');
+            }, 100);
+        }
+    }, 50);
 });
+
+// Fallback: Try to initialize if DOM is already loaded
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    setTimeout(() => {
+        displayCourses('all');
+    }, 100);
+}
