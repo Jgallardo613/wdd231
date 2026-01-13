@@ -1,8 +1,9 @@
 const courses = [
-    { subject: 'CSE', number: 110, title: 'Programming Building Blocks', credits: 2, completed: false },
+    { subject: 'CSE', number: 110, title: 'Programming Building Blocks', credits: 2, completed: true },
     { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: true },
-    { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: false },
-    { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: false },
+    { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: true },
+    { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: true },
+    { subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, completed: true },
     { subject: 'WDD', number: 231, title: 'Web Frontend Development I', credits: 2, completed: false }
 ];
 
@@ -23,7 +24,7 @@ function displayCourses(filter = 'all') {
         filteredCourses = courses.filter(course => course.subject === 'CSE');
     }
     
-    // Calculate total credits
+    // Calculate total credits using reduce
     const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
     
     // Display courses
@@ -53,8 +54,10 @@ function updateButtonStates(activeFilter) {
         if (button) {
             if (buttonId.replace('Btn', '') === activeFilter) {
                 button.style.backgroundColor = '#002244';
+                button.style.fontWeight = 'bold';
             } else {
                 button.style.backgroundColor = '#003366';
+                button.style.fontWeight = 'normal';
             }
         }
     });
@@ -66,19 +69,21 @@ document.addEventListener('DOMContentLoaded', () => {
     displayCourses('all');
     
     // Add event listeners to filter buttons
-    const allBtn = document.getElementById('allBtn');
-    const wddBtn = document.getElementById('wddBtn');
-    const cseBtn = document.getElementById('cseBtn');
+    document.getElementById('allBtn')?.addEventListener('click', () => {
+        displayCourses('all');
+    });
     
-    if (allBtn) {
-        allBtn.addEventListener('click', () => displayCourses('all'));
-    }
+    document.getElementById('wddBtn')?.addEventListener('click', () => {
+        displayCourses('wdd');
+    });
     
-    if (wddBtn) {
-        wddBtn.addEventListener('click', () => displayCourses('wdd'));
-    }
+    document.getElementById('cseBtn')?.addEventListener('click', () => {
+        displayCourses('cse');
+    });
     
-    if (cseBtn) {
-        cseBtn.addEventListener('click', () => displayCourses('cse'));
-    }
+    // Credit verification
+    console.log('=== CREDIT TOTALS ===');
+    console.log('All courses:', courses.reduce((sum, c) => sum + c.credits, 0), 'credits (should be 12)');
+    console.log('WDD courses:', courses.filter(c => c.subject === 'WDD').reduce((sum, c) => sum + c.credits, 0), 'credits (should be 6)');
+    console.log('CSE courses:', courses.filter(c => c.subject === 'CSE').reduce((sum, c) => sum + c.credits, 0), 'credits (should be 6)');
 });
