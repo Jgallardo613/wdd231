@@ -1,0 +1,126 @@
+/* Basic CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 15px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    font-size: 1.4rem;
+}
+
+.card img {
+    width: 100%;
+    max-width: 280px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 3px solid #ecf0f1;
+}
+
+.card p {
+    margin: 8px 0;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.card .info {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.card .info p {
+    color: #2c3e50;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #cards {
+        grid-template-columns: 1fr;
+    }
+    
+    body {
+        padding: 10px;
+    }
+}
