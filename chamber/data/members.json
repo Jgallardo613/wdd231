@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Tech Solutions Inc",
+    "address": "123 Innovation Drive",
+    "phone": "(555) 123-4567",
+    "website": "https://example.com",
+    "membershipLevel": "Gold",
+    "image": "tech.jpg"
+  },
+  {
+    "name": "Green Earth Landscaping",
+    "address": "456 Garden Lane",
+    "phone": "(555) 987-6543",
+    "website": "https://example.com",
+    "membershipLevel": "Silver",
+    "image": "landscaping.jpg"
+  },
+  {
+    "name": "Urban Coffee Roasters",
+    "address": "789 Brew Street",
+    "phone": "(555) 456-7890",
+    "website": "https://example.com",
+    "membershipLevel": "Bronze",
+    "image": "bookstore.jpg"
+  },
+  {
+    "name": "Summit Outdoor Gear",
+    "address": "321 Mountain Trail",
+    "phone": "(555) 234-5678",
+    "website": "https://example.com",
+    "membershipLevel": "Gold",
+    "image": "fitness.jpg"
+  },
+  {
+    "name": "Precision Auto Care",
+    "address": "654 Mechanic Avenue",
+    "phone": "(555) 876-5432",
+    "website": "https://example.com",
+    "membershipLevel": "Silver",
+    "image": "auto.jpg"
+  },
+  {
+    "name": "Fresh Market Grocers",
+    "address": "987 Produce Way",
+    "phone": "(555) 345-6789",
+    "website": "https://example.com",
+    "membershipLevel": "Bronze",
+    "image": "bakery.jpg"
+  },
+  {
+    "name": "Digital Creative Agency",
+    "address": "147 Design Boulevard",
+    "phone": "(555) 654-3210",
+    "website": "https://example.com",
+    "membershipLevel": "Gold",
+    "image": "design.jpg"
+  }
+]
