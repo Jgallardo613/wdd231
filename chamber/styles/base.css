@@ -37,7 +37,7 @@ header {
 }
 
 /* Logo heading - SINGLE RULE */
-.logo-heading {
+.logo h1 { /* CHANGED from .logo-heading to logo h1 */
     font-size: 1.8rem;
     font-weight: 700;
     color: #fff;
@@ -101,7 +101,7 @@ footer p {
         gap: 1rem;
     }
     
-    .logo-heading {
+    .logo h1 {
         font-size: 1.5rem;
     }
     
