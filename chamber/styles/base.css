@@ -1,6 +1,6 @@
-/* Fix Issue 1: Header contrast */
+/* Fix Issue 1: Header contrast - HIGH CONTRAST */
 header {
-    background-color: #2c3e50; /* Dark blue background */
+    background-color: #1a365d; /* Even darker blue for better contrast */
     color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -21,10 +21,11 @@ header {
     border-radius: 8px;
 }
 
-.logo h1 {
+.logo h2 {
     font-size: 1.8rem;
     margin: 0;
-    color: white; /* Ensure white text on dark background */
+    color: white !important; /* Force white text */
+    font-weight: 700;
 }
 
 /* Navigation styles */
@@ -41,21 +42,21 @@ nav a {
     text-decoration: none;
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
     font-weight: 600;
     font-size: 1rem;
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Fix Issue 2: Active link contrast - HIGH CONTRAST FIX */
+/* Fix Issue 2: Active link contrast - HIGH CONTRAST */
 nav a.active {
-    color: #1a365d; /* Dark blue text */
-    background-color: rgba(255, 255, 255, 0.9); /* Near-white background */
+    color: #1a365d !important; /* Dark blue text */
+    background-color: #ffd700 !important; /* Bright gold background */
     font-weight: 700;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 /* Main content */
@@ -63,11 +64,12 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    min-height: 70vh;
 }
 
 /* Footer */
 footer {
-    background-color: #2c3e50;
+    background-color: #1a365d;
     color: white;
     text-align: center;
     padding: 2rem;
@@ -76,7 +78,7 @@ footer {
 
 footer p {
     margin: 0.5rem 0;
-    color: white; /* Ensure white text on dark background */
+    color: white;
 }
 
 /* Responsive header */
@@ -96,7 +98,7 @@ footer p {
         font-size: 0.9rem;
     }
     
-    .logo h1 {
+    .logo h2 {
         font-size: 1.5rem;
     }
 }
