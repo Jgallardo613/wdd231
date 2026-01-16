@@ -1,72 +1,82 @@
+// Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Set last modified date
+    document.getElementById('last-modified').textContent = document.lastModified;
+    
+    // View toggle functionality
+    const gridViewBtn = document.getElementById('grid-view');
+    const listViewBtn = document.getElementById('list-view');
+    const memberContainer = document.getElementById('member-container');
+    
+    gridViewBtn.addEventListener('click', function() {
+        memberContainer.className = 'grid-view';
+        gridViewBtn.classList.add('active');
+        listViewBtn.classList.remove('active');
+    });
+    
+    listViewBtn.addEventListener('click', function() {
+        memberContainer.className = 'list-view';
+        listViewBtn.classList.add('active');
+        gridViewBtn.classList.remove('active');
+    });
+    
+    // Load members from JSON
     loadMembers();
-    setupViewToggle();
-    updateFooter();
 });
 
 async function loadMembers() {
     try {
         const response = await fetch('data/members.json');
-        if (!response.ok) throw new Error('Failed to load data');
         const members = await response.json();
         displayMembers(members);
     } catch (error) {
-        document.getElementById('member-container').innerHTML = 
-            '<div class="error">Error loading member data</div>';
-        console.error('Load error:', error);
+        console.error('Error loading members:', error);
+        document.querySelector('.loading').textContent = 'Error loading businesses. Please try again later.';
     }
 }
 
 function displayMembers(members) {
     const container = document.getElementById('member-container');
+    
+    // Remove loading message
+    const loadingElement = container.querySelector('.loading');
+    if (loadingElement) {
+        container.removeChild(loadingElement);
+    }
+    
+    // Clear container
     container.innerHTML = '';
     
+    // Display each member
     members.forEach(member => {
         const card = document.createElement('div');
         card.className = 'member-card';
         
-        // FIXED PATH: images/ + exact filename from JSON
-        const imgPath = `images/${member.image}`;
+        // Create membership level class
+        const levelClass = member.membershipLevel.toLowerCase();
+        
+        // Handle image path - ensure it's in images directory
+        const imagePath = `images/${member.image}`;
         
         card.innerHTML = `
-            <div class="image-container">
-                <img src="${imgPath}" alt="${member.name}" 
-                     onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200/ccc/666?text=Image+Error'; console.log('Failed: ${imgPath}')">
-            </div>
+            <img src="${imagePath}" alt="${member.name} logo" loading="lazy" onerror="this.src='images/placeholder.jpg'">
             <div class="card-content">
                 <h3>${member.name}</h3>
-                <p class="address">📍 ${member.address}</p>
-                <p class="phone">📞 ${member.phone}</p>
-                <p class="website">🌐 <a href="${member.website}" target="_blank">Visit Website</a></p>
-                <p class="membership-level ${member.membershipLevel.toLowerCase()}">
-                    ⭐ ${member.membershipLevel} Member
-                </p>
+                <p>${member.address}</p>
+                <p class="phone">${member.phone}</p>
+                <a href="${member.website}" target="_blank" rel="noopener" class="website">Visit Website</a>
+                <div class="level ${levelClass}">${member.membershipLevel} Member</div>
             </div>
         `;
         
         container.appendChild(card);
     });
-}
-
-function setupViewToggle() {
-    const gridBtn = document.getElementById('grid-view');
-    const listBtn = document.getElementById('list-view');
-    const container = document.getElementById('member-container');
     
-    gridBtn.addEventListener('click', () => {
-        container.className = 'grid-view';
-        gridBtn.classList.add('active');
-        listBtn.classList.remove('active');
-    });
-    
-    listBtn.addEventListener('click', () => {
-        container.className = 'list-view';
-        listBtn.classList.add('active');
-        gridBtn.classList.remove('active');
-    });
-}
-
-function updateFooter() {
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-    document.getElementById('last-modified').textContent = document.lastModified;
+    // If no members found
+    if (members.length === 0) {
+        container.innerHTML = '<div class="loading">No businesses found.</div>';
+    }
 }
