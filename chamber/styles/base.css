@@ -1,6 +1,18 @@
-/* Fix Issue 1: Header contrast - HIGH CONTRAST */
+/* ===== FORCE WHITE TEXT IN HEADER ===== */
+header, header *, header h2, .logo h2, .logo, nav a {
+    color: #ffffff !important;
+}
+
+/* Active link high contrast */
+nav a.active {
+    background-color: #ffd700 !important; /* Gold */
+    color: #000000 !important; /* Black */
+    font-weight: 700;
+}
+
+/* Header styles */
 header {
-    background-color: #1a365d; /* Even darker blue for better contrast */
+    background-color: #1a365d;
     color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -24,7 +36,7 @@ header {
 .logo h2 {
     font-size: 1.8rem;
     margin: 0;
-    color: white !important; /* Force white text */
+    color: white;
     font-weight: 700;
 }
 
@@ -42,21 +54,13 @@ nav a {
     text-decoration: none;
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
-    transition: all 0.3s;
+    transition: background-color 0.3s;
     font-weight: 600;
     font-size: 1rem;
 }
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Fix Issue 2: Active link contrast - HIGH CONTRAST */
-nav a.active {
-    color: #1a365d !important; /* Dark blue text */
-    background-color: #ffd700 !important; /* Bright gold background */
-    font-weight: 700;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 /* Main content */
