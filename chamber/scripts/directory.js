@@ -62,12 +62,12 @@ function displayMembers(members) {
         const imagePath = `images/${member.image}`;
         
         card.innerHTML = `
-            <img src="${imagePath}" alt="${member.name} logo" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+            <img src="${imagePath}" alt="${member.name} logo" loading="lazy">
             <div class="card-content">
                 <h3>${member.name}</h3>
                 <p>${member.address}</p>
                 <p class="phone">${member.phone}</p>
-                <a href="${member.website}" target="_blank" rel="noopener" class="website">Visit Website</a>
+                <a href="${member.website}" target="_blank" rel="noopener" class="website" aria-label="Visit ${member.name} website">Visit Website</a>
                 <div class="level ${levelClass}">${member.membershipLevel} Member</div>
             </div>
         `;
