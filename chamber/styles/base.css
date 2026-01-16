@@ -23,7 +23,7 @@ header {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Logo section */
+/* Logo - SINGLE RULE */
 .logo {
     display: flex;
     align-items: center;
@@ -36,21 +36,23 @@ header {
     border-radius: 8px;
 }
 
-.logo h2 {
+/* Logo heading - SINGLE RULE */
+.logo-heading {
     font-size: 1.8rem;
     font-weight: 700;
     color: #fff;
     margin: 0;
 }
 
-/* Navigation */
+/* Navigation - SINGLE RULE for nav */
 nav ul {
     display: flex;
     list-style: none;
     gap: 1.5rem;
 }
 
-nav a {
+/* Navigation links - SINGLE RULE */
+.nav-link {
     color: #fff;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
@@ -60,11 +62,11 @@ nav a {
     transition: background-color 0.3s;
 }
 
-nav a:hover {
+.nav-link:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
-nav a.active {
+.nav-link.active {
     background-color: #ffd700;
     color: #000;
     font-weight: 700;
@@ -99,7 +101,7 @@ footer p {
         gap: 1rem;
     }
     
-    .logo h2 {
+    .logo-heading {
         font-size: 1.5rem;
     }
     
@@ -107,7 +109,7 @@ footer p {
         gap: 0.5rem;
     }
     
-    nav a {
+    .nav-link {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
