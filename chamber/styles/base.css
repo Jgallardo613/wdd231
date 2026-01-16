@@ -1,26 +1,29 @@
-/* ===== FORCE WHITE TEXT IN HEADER ===== */
-header, header *, header h2, .logo h2, .logo, nav a {
-    color: #ffffff !important;
-}
-
-/* Active link high contrast */
-nav a.active {
-    background-color: #ffd700 !important; /* Gold */
-    color: #000000 !important; /* Black */
-    font-weight: 700;
-}
-
-/* Header styles */
+/* ===== NUCLEAR HEADER FIX ===== */
 header {
     background-color: #1a365d;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    color: white !important;
 }
 
+header * {
+    color: white !important;
+}
+
+.logo h2 {
+    color: white !important;
+}
+
+nav a {
+    color: white !important;
+}
+
+/* Active link */
+nav a.active {
+    background-color: #ffd700;
+    color: black !important;
+    font-weight: bold;
+}
+
+/* ===== REST OF YOUR STYLES ===== */
 .logo {
     display: flex;
     align-items: center;
@@ -36,11 +39,9 @@ header {
 .logo h2 {
     font-size: 1.8rem;
     margin: 0;
-    color: white;
     font-weight: 700;
 }
 
-/* Navigation styles */
 nav ul {
     display: flex;
     list-style: none;
@@ -50,7 +51,6 @@ nav ul {
 }
 
 nav a {
-    color: white;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
@@ -63,7 +63,6 @@ nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Main content */
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -71,7 +70,6 @@ main {
     min-height: 70vh;
 }
 
-/* Footer */
 footer {
     background-color: #1a365d;
     color: white;
@@ -82,10 +80,8 @@ footer {
 
 footer p {
     margin: 0.5rem 0;
-    color: white;
 }
 
-/* Responsive header */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
