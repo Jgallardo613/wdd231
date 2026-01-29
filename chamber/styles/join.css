@@ -72,7 +72,7 @@ legend {
 
 .submit-btn {
     background: var(--primary-color);
-    color: white;
+    color: var(--text-light, white); /* FIXED: Use variable with fallback */
     border: none;
     padding: 1rem 2rem;
     font-size: 1.1rem;
@@ -130,11 +130,11 @@ legend {
     position: relative;
 }
 
-/* ONLY ONE .card-header RULE - NO DUPLICATES */
+/* CONSOLIDATED .card-header RULE - NO DUPLICATES */
 .card-header {
     background: var(--primary-color);
-    color: white;
-    padding: 1.5rem;
+    color: var(--text-light, white); /* FIXED: Use variable with fallback */
+    padding: 1.5rem; /* Using the 1.5rem value from your join.css */
     text-align: center;
 }
 
@@ -183,12 +183,12 @@ legend {
 
 .view-benefits:hover {
     background: var(--primary-color);
-    color: white;
+    color: var(--text-light, white); /* FIXED: Use variable with fallback */
 }
 
 a.active {
     background: var(--primary-color);
-    color: white;
+    color: var(--text-light, white); /* FIXED: Use variable with fallback */
 }
 
 /* Responsive */
