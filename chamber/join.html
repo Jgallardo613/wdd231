@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the Rexburg City Chamber of Commerce and access networking, resources, and business growth opportunities. Choose from four membership levels.">
+    <meta name="description" content="Join Rexburg City Chamber of Commerce. Access business networking, resources, and growth opportunities. Four membership levels available.">
     <meta name="author" content="Jeffrey Gallardo">
     <title>Join - Rexburg City Chamber of Commerce</title>
     
@@ -19,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="images/favicon.ico">
+    <script src="scripts/join.js" defer></script>
 </head>
 <body>
     <header>
@@ -39,7 +40,6 @@
     </header>
     
     <main>
-        <!-- ONLY ONE h1 in main -->
         <h1>Join Our Chamber of Commerce</h1>
         
         <div class="container">
@@ -101,12 +101,11 @@
             </section>
             
             <section class="membership-cards">
-                <!-- FIXED: Changed from h1 to h2 -->
                 <h2>Membership Levels</h2>
                 <p class="section-subtitle">Choose the membership level that fits your business needs</p>
                 
                 <div class="membership-grid">
-                    <div class="membership-card">
+                    <div class="membership-card" data-level="np">
                         <div class="card-header">
                             <h3>Non-Profit</h3>
                             <div class="price">Free</div>
@@ -117,11 +116,11 @@
                                 <li>✓ Monthly newsletter</li>
                                 <li>✓ Access to networking events</li>
                             </ul>
-                            <button class="view-benefits">View Benefits</button>
+                            <button class="view-benefits" data-level="np">View Benefits</button>
                         </div>
                     </div>
                     
-                    <div class="membership-card">
+                    <div class="membership-card" data-level="bronze">
                         <div class="card-header">
                             <h3>Bronze</h3>
                             <div class="price">$50<span>/month</span></div>
@@ -133,11 +132,11 @@
                                 <li>✓ Monthly training sessions</li>
                                 <li>✓ Business listing with logo</li>
                             </ul>
-                            <button class="view-benefits">View Benefits</button>
+                            <button class="view-benefits" data-level="bronze">View Benefits</button>
                         </div>
                     </div>
                     
-                    <div class="membership-card">
+                    <div class="membership-card" data-level="silver">
                         <div class="card-header">
                             <h3>Silver</h3>
                             <div class="price">$100<span>/month</span></div>
@@ -150,11 +149,11 @@
                                 <li>✓ Social media promotion</li>
                                 <li>✓ Priority event registration</li>
                             </ul>
-                            <button class="view-benefits">View Benefits</button>
+                            <button class="view-benefits" data-level="silver">View Benefits</button>
                         </div>
                     </div>
                     
-                    <div class="membership-card highlight">
+                    <div class="membership-card highlight" data-level="gold">
                         <div class="card-header">
                             <h3>Gold</h3>
                             <div class="price">$200<span>/month</span></div>
@@ -168,13 +167,22 @@
                                 <li>✓ Dedicated business consultant</li>
                                 <li>✓ VIP networking events</li>
                             </ul>
-                            <button class="view-benefits">View Benefits</button>
+                            <button class="view-benefits" data-level="gold">View Benefits</button>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
     </main>
+    
+    <!-- Modal for Benefits -->
+    <div id="benefitsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modalTitle">Membership Benefits</h3>
+            <div id="modalBenefits"></div>
+        </div>
+    </div>
     
     <footer>
         <div class="footer-content">
@@ -184,7 +192,5 @@
             <p><small>WDD 231 Web Frontend Development I Project</small></p>
         </div>
     </footer>
-    
-    <script src="scripts/join.js"></script>
 </body>
 </html>
