@@ -1,226 +1,241 @@
-// join.js - JavaScript for Chamber of Commerce Join Page
+// join.js - Chamber Join Page Functionality
 
 // Set current year in footer
-document.addEventListener('DOMContentLoaded', function() {
-    // Set current year
-    const currentYear = new Date().getFullYear();
-    const yearElement = document.getElementById('current-year');
-    if (yearElement) {
-        yearElement.textContent = currentYear;
-    }
-    
-    // Set timestamp when page loads
-    const timestampField = document.getElementById('timestamp');
-    if (timestampField) {
-        timestampField.value = Date.now();
-    }
-    
-    // Modal functionality for membership benefits
-    setupModals();
-    
-    // Form validation enhancements
-    enhanceFormValidation();
-    
-    // Add animation to membership cards
-    animateMembershipCards();
-});
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// Set timestamp when page loads
+document.getElementById('timestamp').value = new Date().toISOString();
+
+// Form validation
+const joinForm = document.getElementById('joinForm');
+if (joinForm) {
+    joinForm.addEventListener('submit', function(event) {
+        const phone = document.getElementById('phone').value;
+        const phonePattern = /^\(\d{3}\) \d{3}-\d{4}$/;
+        
+        if (!phonePattern.test(phone)) {
+            event.preventDefault();
+            alert('Please enter phone number in format: (555) 123-4567');
+            document.getElementById('phone').focus();
+            return false;
+        }
+        
+        // Additional validation
+        const firstName = document.getElementById('first-name').value;
+        const lastName = document.getElementById('last-name').value;
+        const email = document.getElementById('email').value;
+        const business = document.getElementById('business').value;
+        const membership = document.getElementById('membership').value;
+        
+        if (!firstName || !lastName || !email || !business || !membership) {
+            event.preventDefault();
+            alert('Please fill in all required fields (*)');
+            return false;
+        }
+        
+        // All validations passed
+        return true;
+    });
+}
 
 // Modal functionality
-function setupModals() {
-    // Open modal when "View Benefits" button is clicked
-    document.querySelectorAll('.view-benefits').forEach(button => {
-        button.addEventListener('click', function() {
-            const modalId = this.getAttribute('data-modal');
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = 'block';
-                modal.setAttribute('aria-hidden', 'false');
-            }
-        });
+const modal = document.getElementById('benefitsModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalBenefits = document.getElementById('modalBenefits');
+const closeModal = document.querySelector('.close-modal');
+
+// Benefits data for each membership level
+const benefitsData = {
+    'np': [
+        'Basic listing in business directory',
+        'Monthly newsletter subscription',
+        'Access to quarterly networking events',
+        'Community support recognition',
+        'Non-profit resource guide',
+        'Eligibility for community grants',
+        'Volunteer opportunity listings',
+        'Access to non-profit workshops',
+        'Annual community impact report'
+    ],
+    'bronze': [
+        'All Non-Profit benefits',
+        '15% discount on chamber events',
+        'Monthly business training sessions',
+        'Business listing with logo',
+        'Social media mention once per quarter',
+        'Access to member-only webinars',
+        'Business mentorship program',
+        'Annual business review',
+        'Access to business resource library',
+        'Discounts on office supplies'
+    ],
+    'silver': [
+        'All Bronze benefits',
+        '25% discount on chamber events',
+        'Advertising opportunities in newsletter',
+        'Featured business spotlight monthly',
+        'Priority event registration',
+        'Social media promotion twice per month',
+        'Business consulting session quarterly',
+        'Access to premium business tools',
+        'Networking event hosting privileges',
+        'Custom email newsletter templates',
+        'Access to market research data'
+    ],
+    'gold': [
+        'All Silver benefits',
+        '50% discount on chamber events',
+        'Premium advertising placement',
+        'Board participation rights',
+        'Annual leadership conference ticket',
+        'Dedicated business consultant',
+        'VIP networking events',
+        'Featured on homepage monthly',
+        'Press release distribution',
+        'Custom business development plan',
+        'Exclusive partner discounts',
+        'Priority referral program',
+        'Media interview opportunities',
+        'Annual strategic planning session'
+    ]
+};
+
+// Level titles for modal
+const levelTitles = {
+    'np': 'Non-Profit Membership Benefits',
+    'bronze': 'Bronze Membership Benefits',
+    'silver': 'Silver Membership Benefits',
+    'gold': 'Gold Membership Benefits'
+};
+
+// Level descriptions
+const levelDescriptions = {
+    'np': 'Perfect for non-profit organizations looking to connect with the community.',
+    'bronze': 'Great for small businesses starting to grow their network.',
+    'silver': 'Ideal for established businesses seeking more visibility.',
+    'gold': 'Premium package for businesses wanting maximum exposure and influence.'
+};
+
+// Open modal when View Benefits is clicked
+document.querySelectorAll('.view-benefits').forEach(button => {
+    button.addEventListener('click', function() {
+        const level = this.getAttribute('data-level');
+        showBenefitsModal(level);
+    });
+});
+
+// Show modal with benefits
+function showBenefitsModal(level) {
+    if (!level || !benefitsData[level]) return;
+    
+    // Set modal title
+    modalTitle.textContent = levelTitles[level];
+    
+    // Clear and populate benefits list
+    modalBenefits.innerHTML = '';
+    
+    // Add description
+    const description = document.createElement('p');
+    description.textContent = levelDescriptions[level];
+    description.style.color = 'var(--text-dark)';
+    description.style.marginBottom = '1.5rem';
+    description.style.fontStyle = 'italic';
+    modalBenefits.appendChild(description);
+    
+    // Add benefits list
+    const ul = document.createElement('ul');
+    
+    benefitsData[level].forEach(benefit => {
+        const li = document.createElement('li');
+        li.textContent = `✓ ${benefit}`;
+        ul.appendChild(li);
     });
     
-    // Close modal when close button is clicked
-    document.querySelectorAll('.close-modal').forEach(button => {
-        button.addEventListener('click', function() {
-            const modal = this.closest('.modal');
-            if (modal) {
-                modal.style.display = 'none';
-                modal.setAttribute('aria-hidden', 'true');
-            }
-        });
-    });
+    modalBenefits.appendChild(ul);
     
-    // Close modal when clicking outside the modal content
-    window.addEventListener('click', function(event) {
-        if (event.target.classList.contains('modal')) {
-            event.target.style.display = 'none';
-            event.target.setAttribute('aria-hidden', 'true');
-        }
-    });
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            document.querySelectorAll('.modal').forEach(modal => {
-                modal.style.display = 'none';
-                modal.setAttribute('aria-hidden', 'true');
-            });
-        }
+    // Show modal with animation
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+// Close modal when X is clicked
+if (closeModal) {
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     });
 }
 
-// Form validation enhancements
-function enhanceFormValidation() {
-    const form = document.getElementById('joinForm');
-    if (!form) return;
-    
-    // Add real-time validation feedback
-    const inputs = form.querySelectorAll('input, select, textarea');
-    inputs.forEach(input => {
-        // Add focus styles
-        input.addEventListener('focus', function() {
-            this.parentElement.classList.add('focused');
-        });
-        
-        input.addEventListener('blur', function() {
-            this.parentElement.classList.remove('focused');
-            validateField(this);
-        });
-        
-        // Validate on input change
-        input.addEventListener('input', function() {
-            validateField(this);
-        });
-    });
-    
-    // Validate individual field
-    function validateField(field) {
-        const parent = field.parentElement;
-        
-        if (field.validity.valid) {
-            parent.classList.remove('invalid');
-            parent.classList.add('valid');
-        } else {
-            parent.classList.remove('valid');
-            parent.classList.add('invalid');
-        }
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     }
-    
-    // Form submission validation
-    form.addEventListener('submit', function(event) {
-        let isValid = true;
-        
-        // Check required fields
-        const requiredFields = form.querySelectorAll('[required]');
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                field.parentElement.classList.add('invalid');
-                isValid = false;
-            }
-        });
-        
-        // Check pattern validation
-        const patternFields = form.querySelectorAll('[pattern]');
-        patternFields.forEach(field => {
-            const pattern = new RegExp(field.pattern);
-            if (field.value && !pattern.test(field.value)) {
-                field.parentElement.classList.add('invalid');
-                isValid = false;
-            }
-        });
-        
-        if (!isValid) {
-            event.preventDefault();
-            // Scroll to first invalid field
-            const firstInvalid = form.querySelector('.invalid');
-            if (firstInvalid) {
-                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }
-    });
-}
+});
 
-// Animate membership cards on page load
-function animateMembershipCards() {
-    const cards = document.querySelectorAll('.membership-card');
-    cards.forEach((card, index) => {
-        // Add animation delay for staggered effect
-        card.style.animationDelay = `${index * 0.1}s`;
-        card.classList.add('animate-in');
-    });
-}
-
-// Helper function to format phone number
-function formatPhoneNumber(phone) {
-    const cleaned = ('' + phone).replace(/\D/g, '');
-    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
-    if (match) {
-        return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     }
-    return phone;
-}
+});
 
-// Optional: Format phone number input in real-time
+// Trigger card animations when page loads
+window.addEventListener('load', function() {
+    // Make cards visible after animation
+    document.querySelectorAll('.membership-card').forEach(card => {
+        card.style.opacity = '1';
+    });
+    
+    // Add loading timestamp
+    const loadTime = new Date().toLocaleString();
+    console.log(`Page loaded at: ${loadTime}`);
+});
+
+// Format phone number as user types
 const phoneInput = document.getElementById('phone');
 if (phoneInput) {
     phoneInput.addEventListener('input', function(e) {
-        const input = e.target.value.replace(/\D/g, '').substring(0, 10);
-        const formatted = input.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
-        e.target.value = formatted;
+        let value = e.target.value.replace(/\D/g, '');
+        
+        if (value.length > 0) {
+            value = '(' + value;
+        }
+        if (value.length > 4) {
+            value = value.slice(0, 4) + ') ' + value.slice(4);
+        }
+        if (value.length > 9) {
+            value = value.slice(0, 9) + '-' + value.slice(9, 13);
+        }
+        
+        e.target.value = value;
     });
 }
 
-// Membership level descriptions (for reference)
-const membershipBenefits = {
-    np: {
-        name: 'Non-Profit',
-        price: 'Free',
-        benefits: [
-            'Free basic listing in our online directory',
-            'Monthly email newsletter with community updates',
-            'Access to quarterly networking events',
-            'Resource library access',
-            'Volunteer opportunity listings'
-        ]
-    },
-    bronze: {
-        name: 'Bronze',
-        price: '$50/month',
-        benefits: [
-            'All Non-Profit benefits',
-            '15% discount on chamber events',
-            'Monthly business training sessions',
-            'Enhanced directory listing with logo',
-            'Business referral program',
-            'Annual business listing'
-        ]
-    },
-    silver: {
-        name: 'Silver',
-        price: '$100/month',
-        benefits: [
-            'All Bronze benefits',
-            'Advertising opportunities in chamber publications',
-            'Featured in monthly member spotlights',
-            'Social media promotion',
-            'Priority registration for events',
-            'Business consulting sessions (2 per year)'
-        ]
-    },
-    gold: {
-        name: 'Gold',
-        price: '$200/month',
-        benefits: [
-            'All Silver benefits',
-            'Premium advertising placement',
-            'Board participation and voting rights',
-            'Annual leadership conference access',
-            'Dedicated business consultant',
-            'VIP networking events with community leaders',
-            'Complimentary event tickets (4 per year)',
-            'Featured speaker opportunities'
-        ]
-    }
-};
-
-console.log('Join page JavaScript loaded successfully');
+// Membership level change handler
+const membershipSelect = document.getElementById('membership');
+if (membershipSelect) {
+    membershipSelect.addEventListener('change', function() {
+        const selectedValue = this.value;
+        const selectedText = this.options[this.selectedIndex].text;
+        console.log(`Selected membership: ${selectedText}`);
+        
+        // Highlight corresponding card
+        document.querySelectorAll('.membership-card').forEach(card => {
+            card.classList.remove('selected-level');
+        });
+        
+        const selectedCard = document.querySelector(`[data-level="${selectedValue}"]`);
+        if (selectedCard) {
+            selectedCard.classList.add('selected-level');
+            selectedCard.style.boxShadow = '0 0 0 3px var(--accent-color)';
+            
+            // Scroll to card
+            setTimeout(() => {
+                selectedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        }
+    });
+}
