@@ -3,67 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You | Rexburg City Chamber of Commerce</title>
-    <meta name="description" content="Thank you for joining Rexburg City Chamber of Commerce">
-    <meta name="author" content="Jeffrey Gallardo">
-    
+    <title>Thank You - Rexburg City Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/join.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="images/favicon.ico">
+    <script src="scripts/thankyou.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="images/chamber-commerce.jpg" alt="Rexburg City Chamber of Commerce logo" width="70" height="70">
                 <h1>Rexburg City Chamber of Commerce</h1>
             </div>
-            
             <nav>
-                <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
                 <ul>
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="directory.html" class="nav-link">Directory</a></li>
-                    <li><a href="join.html" class="nav-link">Join</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     
     <main>
-        <h1>Thank You for Your Application!</h1>
-        <div id="application-details">
-            <!-- Form data will appear here -->
+        <div class="container">
+            <section class="thankyou-section">
+                <h1>Thank You for Your Application!</h1>
+                
+                <div class="confirmation-card">
+                    <h2>Application Received</h2>
+                    <p>We have received your membership application and will contact you within 2 business days.</p>
+                    
+                    <div class="application-details">
+                        <h3>Application Details:</h3>
+                        <div id="applicationData">
+                            <!-- Data will be inserted by JavaScript -->
+                            <p><strong>First Name:</strong> <span id="firstName"></span></p>
+                            <p><strong>Last Name:</strong> <span id="lastName"></span></p>
+                            <p><strong>Email:</strong> <span id="email"></span></p>
+                            <p><strong>Phone:</strong> <span id="phone"></span></p>
+                            <p><strong>Business Name:</strong> <span id="business"></span></p>
+                            <p><strong>Membership Level:</strong> <span id="membership"></span></p>
+                            <p><strong>Application Date:</strong> <span id="timestamp"></span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="next-steps">
+                        <h3>Next Steps:</h3>
+                        <ul>
+                            <li>You will receive a confirmation email within 24 hours</li>
+                            <li>Our membership coordinator will contact you to discuss benefits</li>
+                            <li>Your business listing will be added to our directory within 48 hours</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="actions">
+                        <a href="index.html" class="button">Return to Home</a>
+                        <a href="directory.html" class="button secondary">View Business Directory</a>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
     
     <footer>
         <div class="footer-content">
             <p>&copy; <span id="current-year"></span> Rexburg City Chamber of Commerce</p>
+            <p>123 Main Street, Rexburg, ID 83440</p>
+            <p>Phone: (208) 555-0123 | Email: contact@rexburgchamber.org</p>
+            <p><small>WDD 231 Web Frontend Development I Project</small></p>
         </div>
     </footer>
-    
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        const params = new URLSearchParams(window.location.search);
-        const detailsContainer = document.getElementById('application-details');
-        
-        if (params.toString()) {
-            detailsContainer.innerHTML = `
-                <p><strong>First Name:</strong> ${params.get('first-name') || ''}</p>
-                <p><strong>Last Name:</strong> ${params.get('last-name') || ''}</p>
-                <p><strong>Email:</strong> ${params.get('email') || ''}</p>
-                <p><strong>Phone:</strong> ${params.get('phone') || ''}</p>
-                <p><strong>Business:</strong> ${params.get('business') || ''}</p>
-                <p><strong>Timestamp:</strong> ${params.get('timestamp') || ''}</p>
-            `;
-        }
-    </script>
 </body>
 </html>
