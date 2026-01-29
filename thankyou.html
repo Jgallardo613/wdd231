@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Rexburg City Chamber of Commerce</title>
+    <meta name="description" content="Thank you for joining Rexburg City Chamber of Commerce">
+    <meta name="author" content="Jeffrey Gallardo">
+    
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/chamber-commerce.jpg" alt="Rexburg City Chamber of Commerce logo" width="70" height="70">
+                <h1>Rexburg City Chamber of Commerce</h1>
+            </div>
+            
+            <nav>
+                <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="directory.html" class="nav-link">Directory</a></li>
+                    <li><a href="join.html" class="nav-link">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h1>Thank You for Your Application!</h1>
+        <div id="application-details">
+            <!-- Form data will appear here -->
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year"></span> Rexburg City Chamber of Commerce</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        const params = new URLSearchParams(window.location.search);
+        const detailsContainer = document.getElementById('application-details');
+        
+        if (params.toString()) {
+            detailsContainer.innerHTML = `
+                <p><strong>First Name:</strong> ${params.get('first-name') || ''}</p>
+                <p><strong>Last Name:</strong> ${params.get('last-name') || ''}</p>
+                <p><strong>Email:</strong> ${params.get('email') || ''}</p>
+                <p><strong>Phone:</strong> ${params.get('phone') || ''}</p>
+                <p><strong>Business:</strong> ${params.get('business') || ''}</p>
+                <p><strong>Timestamp:</strong> ${params.get('timestamp') || ''}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

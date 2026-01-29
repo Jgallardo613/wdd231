@@ -1,0 +1,214 @@
+/* join.css - Styles for Chamber Join Page */
+
+/* Form Styles */
+.form-section {
+    background: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.1);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    height: 48px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+fieldset {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Membership Cards */
+.membership-cards {
+    margin-top: 2rem;
+}
+
+.membership-cards h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.section-subtitle {
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.membership-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.membership-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.membership-card.highlight {
+    border: 2px solid var(--accent-color);
+    position: relative;
+}
+
+/* ONLY ONE .card-header RULE - NO DUPLICATES */
+.card-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-header h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.card-header .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card-header .price span {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.card-body li {
+    padding: 0.25rem 0;
+    color: var(--text-dark);
+}
+
+.view-benefits {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.view-benefits:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+a.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .membership-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-section,
+    .membership-cards {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .membership-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

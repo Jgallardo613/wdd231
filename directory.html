@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="City Chamber of Commerce business directory with local member listings">
+    <meta name="author" content="Jeffrey Gallardo">
+    <meta property="og:title" content="Business Directory | City Chamber">
+    <meta property="og:description" content="Explore our directory of local chamber member businesses in the City Chamber of Commerce. Find contact information, websites, and membership levels.">
+    <meta property="og:image" content="https://jgallardo613.github.io/wdd231/chamber/images/chamber-commerce.jpg">
+    <meta property="og:url" content="https://jgallardo613.github.io/wdd231/chamber/directory.html">
+    
+    <title>Directory | City Chamber</title>
+    
+    <!-- FIXED: Removed ?v=3 -->
+    <link rel="icon" href="images/chamber-commerce.jpg" type="image/jpeg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/directory.css">
+    
+    <script src="scripts/directory.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- FIXED: Removed ?v=3 -->
+            <img src="images/chamber-commerce.jpg" alt="City Chamber Logo">
+            <h1>City Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="directory.html" class="nav-link active">Directory</a></li>
+                <li><a href="join.html" class="nav-link">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Member Directory</h2>
+        <div class="view-toggle">
+            <button id="grid-view" class="active">Grid View</button>
+            <button id="list-view">List View</button>
+        </div>
+        <div id="member-container" class="grid-view">
+            <div class="loading">Loading businesses...</div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="current-year"></span> City Chamber | Jeffrey Gallardo | WDD 231</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>
