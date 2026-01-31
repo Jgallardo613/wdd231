@@ -1,5 +1,24 @@
 // join.js - Chamber Join Page Functionality
 
+// ===== HAMBURGER MENU FUNCTIONALITY =====
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('nav ul');
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+}
+
 // Set current year in footer
 document.getElementById('current-year').textContent = new Date().getFullYear();
 
