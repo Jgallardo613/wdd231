@@ -3,31 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Meta Tags - Fixed Content -->
     <title>Home | Rexburg City Chamber of Commerce</title>
     <meta name="description" content="Rexburg City Chamber of Commerce - Supporting local businesses in Rexburg, Idaho. Discover events and featured businesses.">
     <meta name="author" content="Jeffrey Gallardo">
-    
-    <!-- Open Graph Tags - Fixed Content -->
     <meta property="og:title" content="Rexburg City Chamber of Commerce | Home">
     <meta property="og:description" content="Welcome to Rexburg City Chamber of Commerce. Discover local events and businesses in Rexburg, Idaho.">
     <meta property="og:image" content="https://jgallardo613.github.io/wdd231/chamber/images/design.jpg">
     <meta property="og:url" content="https://jgallardo613.github.io/wdd231/chamber/index.html">
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS Files -->
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/home.css">
-    
-    <!-- Favicon -->
     <link rel="icon" href="images/chamber-commerce.jpg" type="image/jpg">
-    
-    <!-- JavaScript -->
     <script src="scripts/home.js" defer></script>
 </head>
 <body>
@@ -37,9 +25,12 @@
                 <img src="images/chamber-commerce.jpg" alt="Rexburg City Chamber of Commerce logo" width="70" height="70">
                 <h1>Rexburg City Chamber of Commerce</h1>
             </div>
-            
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
-                <button class="menu-toggle" aria-label="Menu">☰</button>
                 <ul>
                     <li><a href="index.html" class="nav-link active">Home</a></li>
                     <li><a href="directory.html" class="nav-link">Directory</a></li>
@@ -56,7 +47,6 @@
         </section>
         
         <div class="cards-container">
-            <!-- Weather Card -->
             <section class="card">
                 <div class="card-header">
                     <h2>Today's Weather</h2>
@@ -82,7 +72,6 @@
                 </div>
             </section>
             
-            <!-- Events Card -->
             <section class="card">
                 <div class="card-header">
                     <h2>Upcoming Events</h2>
@@ -109,7 +98,6 @@
                 </div>
             </section>
             
-            <!-- Featured Businesses Card -->
             <section class="card">
                 <div class="card-header">
                     <h2>Featured Businesses</h2>
@@ -143,7 +131,6 @@
             </section>
         </div>
         
-        <!-- Responsive Image Section -->
         <section class="image-section">
             <h2 class="text-center">Our Rexburg Business Community</h2>
             <picture>
@@ -154,7 +141,6 @@
             <p class="text-center mt-1">Rexburg's vibrant business community fosters innovation and collaboration.</p>
         </section>
         
-        <!-- Call to Action -->
         <section class="cta">
             <h2>Ready to Grow Your Business in Rexburg?</h2>
             <p>Join over 300 local businesses who are already benefiting from Chamber membership.</p>
