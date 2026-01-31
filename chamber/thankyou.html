@@ -3,191 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join Rexburg City Chamber of Commerce. Access business networking, resources, and growth opportunities. Four membership levels available.">
-    <meta name="author" content="Jeffrey Gallardo">
-    <title>Join - Rexburg City Chamber of Commerce</title>
-    
-    <meta property="og:title" content="Join Rexburg City Chamber of Commerce">
-    <meta property="og:description" content="Become a member of Rexburg's premier business network. Choose from four membership levels with benefits to help your business grow.">
-    <meta property="og:image" content="https://jgallardo613.github.io/wdd231/chamber/images/og-image.jpg">
-    <meta property="og:url" content="https://jgallardo613.github.io/wdd231/chamber/join.html">
-    
-    <link rel="stylesheet" href="styles/normalize.css">
+    <title>Thank You - Rexburg City Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/join.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="images/favicon.ico">
-    <script src="scripts/join.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <h1>Rexburg City Chamber of Commerce</h1>
+                <img src="images/chamber-commerce.jpg" alt="Rexburg Chamber Logo">
+                <div class="site-title">Rexburg City Chamber of Commerce</div>
             </div>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="join.html" class="active">Join</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     
     <main>
-        <h1>Join Our Chamber of Commerce</h1>
-        
-        <div class="container">
-            <section class="form-section">
-                <h2>Membership Application</h2>
-                <form method="get" action="thankyou.html" id="joinForm">
-                    <fieldset>
-                        <legend>Personal Information</legend>
-                        <div class="form-group">
-                            <label for="first-name">First Name *</label>
-                            <input type="text" id="first-name" name="first-name" required autocomplete="given-name" title="Enter your first name">
-                        </div>
-                        <div class="form-group">
-                            <label for="last-name">Last Name *</label>
-                            <input type="text" id="last-name" name="last-name" required autocomplete="family-name" title="Enter your last name">
-                        </div>
-                        <div class="form-group">
-                            <label for="title">Organization Title</label>
-                            <input type="text" id="title" name="title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" title="Enter your organization title (minimum 7 letters, spaces, or hyphens)">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required autocomplete="email" placeholder="your.name@example.com" title="Enter your email address">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Mobile Phone *</label>
-                            <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(555) 123-4567" title="Enter your mobile phone number">
-                        </div>
-                    </fieldset>
-                    
-                    <fieldset>
-                        <legend>Business Information</legend>
-                        <div class="form-group">
-                            <label for="business">Business/Organization Name *</label>
-                            <input type="text" id="business" name="business" required autocomplete="organization" title="Enter your business or organization name">
-                        </div>
-                        <div class="form-group">
-                            <label for="membership">Membership Level *</label>
-                            <select id="membership" name="membership" required title="Select your membership level">
-                                <option value="" disabled selected>Choose a level</option>
-                                <option value="np">NP Membership (Non-Profit, No fee)</option>
-                                <option value="bronze">Bronze Membership</option>
-                                <option value="silver">Silver Membership</option>
-                                <option value="gold">Gold Membership</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Business Description</label>
-                            <textarea id="description" name="description" rows="4" title="Describe your business or organization"></textarea>
-                        </div>
-                    </fieldset>
-                    
-                    <input type="hidden" id="timestamp" name="timestamp">
-                    
-                    <div class="form-group">
-                        <button type="submit" class="submit-btn">Submit Application</button>
-                    </div>
-                </form>
-            </section>
-            
-            <section class="membership-cards">
-                <h2>Membership Levels</h2>
-                <p class="section-subtitle">Choose the membership level that fits your business needs</p>
-                
-                <div class="membership-grid">
-                    <div class="membership-card" data-level="np">
-                        <div class="card-header">
-                            <h3>Non-Profit</h3>
-                            <div class="price">Free</div>
-                        </div>
-                        <div class="card-body">
-                            <ul>
-                                <li>✓ Basic listing in directory</li>
-                                <li>✓ Monthly newsletter</li>
-                                <li>✓ Access to networking events</li>
-                            </ul>
-                            <button class="view-benefits" data-level="np">View Benefits</button>
-                        </div>
-                    </div>
-                    
-                    <div class="membership-card" data-level="bronze">
-                        <div class="card-header">
-                            <h3>Bronze</h3>
-                            <div class="price">$50<span>/month</span></div>
-                        </div>
-                        <div class="card-body">
-                            <ul>
-                                <li>✓ Everything in Non-Profit</li>
-                                <li>✓ Event discounts (15%)</li>
-                                <li>✓ Monthly training sessions</li>
-                                <li>✓ Business listing with logo</li>
-                            </ul>
-                            <button class="view-benefits" data-level="bronze">View Benefits</button>
-                        </div>
-                    </div>
-                    
-                    <div class="membership-card" data-level="silver">
-                        <div class="card-header">
-                            <h3>Silver</h3>
-                            <div class="price">$100<span>/month</span></div>
-                        </div>
-                        <div class="card-body">
-                            <ul>
-                                <li>✓ Everything in Bronze</li>
-                                <li>✓ Advertising opportunities</li>
-                                <li>✓ Featured in monthly spotlights</li>
-                                <li>✓ Social media promotion</li>
-                                <li>✓ Priority event registration</li>
-                            </ul>
-                            <button class="view-benefits" data-level="silver">View Benefits</button>
-                        </div>
-                    </div>
-                    
-                    <div class="membership-card highlight" data-level="gold">
-                        <div class="card-header">
-                            <h3>Gold</h3>
-                            <div class="price">$200<span>/month</span></div>
-                        </div>
-                        <div class="card-body">
-                            <ul>
-                                <li>✓ Everything in Silver</li>
-                                <li>✓ Premium advertising placement</li>
-                                <li>✓ Board participation rights</li>
-                                <li>✓ Annual leadership conference</li>
-                                <li>✓ Dedicated business consultant</li>
-                                <li>✓ VIP networking events</li>
-                            </ul>
-                            <button class="view-benefits" data-level="gold">View Benefits</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <h1>Thank You!</h1>
+        <p>Your application has been submitted.</p>
+        <div id="data"></div>
+        <a href="index.html" class="button">Return Home</a>
     </main>
-    
-    <!-- Modal for Benefits -->
-    <div id="benefitsModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3 id="modalTitle">Membership Benefits</h3>
-            <div id="modalBenefits"></div>
-        </div>
-    </div>
     
     <footer>
         <div class="footer-content">
             <p>&copy; <span id="current-year"></span> Rexburg City Chamber of Commerce</p>
             <p>123 Main Street, Rexburg, ID 83440</p>
-            <p>Phone: (208) 555-0123 | Email: contact@rexburgchamber.org</p>
-            <p><small>WDD 231 Web Frontend Development I Project</small></p>
         </div>
     </footer>
+    
+    <script>
+        // Display form data
+        const params = new URLSearchParams(window.location.search);
+        const dataDiv = document.getElementById('data');
+        
+        if (params.toString()) {
+            const timestamp = params.get('timestamp');
+            let formattedDate = 'Just now';
+            
+            if (timestamp) {
+                try {
+                    const date = new Date(timestamp);
+                    formattedDate = date.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                } catch (e) {
+                    formattedDate = 'Just now';
+                }
+            }
+            
+            dataDiv.innerHTML = `
+                <p><strong>Name:</strong> ${params.get('first-name') || ''} ${params.get('last-name') || ''}</p>
+                <p><strong>Email:</strong> ${params.get('email') || ''}</p>
+                <p><strong>Phone:</strong> ${params.get('phone') || ''}</p>
+                <p><strong>Business:</strong> ${params.get('business') || ''}</p>
+                <p><strong>Submitted:</strong> ${formattedDate}</p>
+            `;
+        } else {
+            dataDiv.innerHTML = '<p>No application data found.</p>';
+        }
+        
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+        
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
