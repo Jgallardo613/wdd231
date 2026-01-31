@@ -180,26 +180,26 @@ function displayMemberSpotlights(members) {
     });
 }
 
-// HAMBURGER MENU FUNCTION
+// HAMBURGER MENU FUNCTION - FIXED
 function initHamburgerMenu() {
-    const menuToggle = document.querySelector('.menu-toggle');
+    const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('nav ul');
     
-    if (menuToggle && navMenu) {
+    if (hamburger && navMenu) {
         console.log('🍔 Hamburger menu initialized');
         
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-            menuToggle.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
-            console.log('📱 Menu toggled:', navMenu.classList.contains('show') ? 'open' : 'closed');
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            console.log('📱 Menu toggled:', navMenu.classList.contains('active') ? 'open' : 'closed');
         });
         
-        // Close menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-                navMenu.classList.remove('show');
-                menuToggle.textContent = '☰';
-            }
+        // Close menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
         });
     } else {
         console.log('⚠️ Hamburger menu elements not found');
