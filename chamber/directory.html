@@ -12,31 +12,36 @@
     
     <title>Directory | City Chamber</title>
     
-    <!-- FIXED: Removed ?v=3 -->
     <link rel="icon" href="images/chamber-commerce.jpg" type="image/jpeg">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/directory.css">
-    
     <script src="scripts/directory.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <!-- FIXED: Removed ?v=3 -->
-            <img src="images/chamber-commerce.jpg" alt="City Chamber Logo">
-            <h1>City Chamber of Commerce</h1>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/chamber-commerce.jpg" alt="City Chamber Logo">
+                <h1>City Chamber of Commerce</h1>
+            </div>
+            
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="directory.html" class="nav-link active">Directory</a></li>
+                    <li><a href="join.html" class="nav-link">Join</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="directory.html" class="nav-link active">Directory</a></li>
-                <li><a href="join.html" class="nav-link">Join</a></li>
-            </ul>
-        </nav>
     </header>
     
     <main>
