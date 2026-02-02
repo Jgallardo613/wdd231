@@ -1,0 +1,52 @@
+/* Apply Selected Color Scheme and Typography */
+:root {
+    --bg-color: #1A1A1A;
+    --text-color: #FFFFFF;
+    --accent-color: #FFD700;
+    --alert-color: #FF4C4C;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+section {
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+}
+
+ul {
+    list-style-type: square;
+}
+
+.wireframe img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border: 2px solid var(--accent-color);
+    margin: 1rem 0;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 4rem;
+    color: var(--accent-color);
+}
