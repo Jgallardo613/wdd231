@@ -1,87 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlertDrive Site Plan | Car Fatigue Tracker</title>
-    <link rel="stylesheet" href="site-plan.css">
+    <title>Home | Rexburg City Chamber of Commerce</title>
+    <meta name="description" content="Rexburg City Chamber of Commerce - Supporting local businesses in Rexburg, Idaho. Discover events and featured businesses.">
+    <meta name="author" content="Jeffrey Gallardo">
+    <meta property="og:title" content="Rexburg City Chamber of Commerce | Home">
+    <meta property="og:description" content="Welcome to Rexburg City Chamber of Commerce. Discover local events and businesses in Rexburg, Idaho.">
+    <meta property="og:image" content="https://jgallardo613.github.io/wdd231/chamber/images/design.jpg">
+    <meta property="og:url" content="https://jgallardo613.github.io/wdd231/chamber/index.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="icon" href="images/chamber-commerce.jpg" type="image/jpg">
+    <script src="scripts/home.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>AlertDrive Site Plan</h1>
-        <p>Individual Project for WDD 231</p>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/chamber-commerce.jpg" alt="Rexburg City Chamber of Commerce logo" width="70" height="70">
+                <h1>Rexburg City Chamber of Commerce</h1>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="directory.html" class="nav-link">Directory</a></li>
+                    <li><a href="join.html" class="nav-link">Join</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
+    
     <main>
-        <section>
-            <h2>Site Name</h2>
-            <p><strong>AlertDrive</strong></p>
-            <p>The name is short, professional, and clearly communicates the core function: keeping drivers alert and safe on the road.</p>
+        <section class="hero">
+            <h2>Building a Stronger Rexburg Together</h2>
+            <p>Connecting businesses, fostering growth, and strengthening our community since 1995.</p>
         </section>
-
-        <section>
-            <h2>Site Purpose</h2>
-            <p>AlertDrive provides a web-based dashboard for drivers and fleet managers to monitor fatigue levels in real-time. It integrates data to provide visual alerts, track patterns, and suggest necessary breaks to reduce accident risks.</p>
-        </section>
-
-        <section>
-            <h2>Scenarios</h2>
-            <ul>
-                <li>"I am a long-haul truck driver. How can I see if my current driving patterns indicate that I need a break before I hit a critical fatigue level?"</li>
-                <li>"I am a fleet manager. Where can I find a summary of my drivers' alertness levels over the last week to help optimize their shift schedules?"</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Color Scheme</h2>
-            <p>Selected palette for high visibility and reduced eye strain during night driving:</p>
-            <ul>
-                <li><strong>Primary (Background):</strong> <span class="color-sample" style="background-color: #1A1A1A; color: white; padding: 2px 8px;">#1A1A1A</span> (Dark Gray) - Used for page background.</li>
-                <li><strong>Secondary (Text):</strong> <span class="color-sample" style="background-color: #FFFFFF; color: black; padding: 2px 8px; border: 1px solid #ccc;">#FFFFFF</span> (White) - Used for primary body text.</li>
-                <li><strong>Accent (Alerts):</strong> <span class="color-sample" style="background-color: #FFD700; color: black; padding: 2px 8px;">#FFD700</span> (Safety Gold) - Used for headings and warnings.</li>
-                <li><strong>Critical:</strong> <span class="color-sample" style="background-color: #FF4C4C; color: white; padding: 2px 8px;">#FF4C4C</span> (Soft Red) - Used for emergency alerts.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Typography</h2>
-            <p><strong>Headings:</strong> <span style="font-family: 'Roboto', sans-serif;">Roboto (Sans-Serif)</span> - Selected for clean legibility.</p>
-            <p><strong>Body/Data:</strong> <span style="font-family: 'Lato', sans-serif;">Lato (Sans-Serif)</span> - Selected for clear data presentation.</p>
-        </section>
-
-        <section>
-            <h2>Wireframes</h2>
-            <div class="wireframe">
-                <h3>Mobile View Wireframe</h3>
-                <div class="wireframe-placeholder">
-                    <p><strong>Layout:</strong> Single column design</p>
-                    <p><strong>Components:</strong></p>
-                    <ul>
-                        <li>Fatigue alert status bar (top)</li>
-                        <li>Current driver metrics (heart rate, hours driven)</li>
-                        <li>Break suggestion card</li>
-                        <li>Recent alerts history</li>
-                        <li>Settings/quick actions (bottom)</li>
-                    </ul>
+        
+        <div class="cards-container">
+            <section class="card">
+                <div class="card-header">
+                    <h2>Today's Weather</h2>
                 </div>
-            </div>
-            <div class="wireframe">
-                <h3>Desktop View Wireframe</h3>
-                <div class="wireframe-placeholder">
-                    <p><strong>Layout:</strong> Three-column grid</p>
-                    <p><strong>Left Column:</strong> Real-time fatigue dashboard with alerts</p>
-                    <p><strong>Center Column:</strong> Driver analytics and patterns over time</p>
-                    <p><strong>Right Column:</strong> Fleet overview and schedule planner</p>
+                <div class="card-content">
+                    <div class="weather-widget">
+                        <h3>Rexburg, ID</h3>
+                        <div class="weather-info">
+                            <div class="weather-icon">
+                                <span class="sun-emoji">☀️</span>
+                            </div>
+                            <div class="weather-details">
+                                <div class="weather-temp">68°F</div>
+                                <div class="weather-desc">Partly Cloudy</div>
+                            </div>
+                        </div>
+                        <div class="weather-forecast">
+                            <p><strong>Forecast:</strong> Mild with occasional clouds</p>
+                            <p><strong>Humidity:</strong> 42%</p>
+                            <p><strong>Wind:</strong> 7 mph SW</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
+            
+            <section class="card">
+                <div class="card-header">
+                    <h2>Upcoming Events</h2>
+                </div>
+                <div class="card-content">
+                    <div class="event">
+                        <h3>Business Networking Mixer</h3>
+                        <p><strong>Date:</strong> March 15, 2024</p>
+                        <p><strong>Time:</strong> 6:00 PM - 8:00 PM</p>
+                        <p><strong>Location:</strong> Rexburg Cultural Center</p>
+                    </div>
+                    <div class="event">
+                        <h3>Small Business Workshop</h3>
+                        <p><strong>Date:</strong> March 22, 2024</p>
+                        <p><strong>Time:</strong> 9:00 AM - 12:00 PM</p>
+                        <p><strong>Location:</strong> Rexburg Public Library</p>
+                    </div>
+                    <div class="event">
+                        <h3>Annual Chamber Gala</h3>
+                        <p><strong>Date:</strong> April 5, 2024</p>
+                        <p><strong>Time:</strong> 7:00 PM - 11:00 PM</p>
+                        <p><strong>Location:</strong> BYU-Idaho Center</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="card">
+                <div class="card-header">
+                    <h2>Featured Businesses</h2>
+                </div>
+                <div class="card-content">
+                    <div class="business">
+                        <img src="images/tech.jpg" alt="Tech Solutions Rexburg office space" width="80" height="80">
+                        <div class="business-info">
+                            <h3>Tech Solutions Rexburg</h3>
+                            <p>Providing innovative IT solutions for local businesses since 2010.</p>
+                            <p><strong>Member since:</strong> 2012</p>
+                        </div>
+                    </div>
+                    <div class="business">
+                        <img src="images/design.jpg" alt="Creative Design Rexburg workspace" width="80" height="80">
+                        <div class="business-info">
+                            <h3>Creative Design Rexburg</h3>
+                            <p>Full-service design agency specializing in branding and marketing.</p>
+                            <p><strong>Member since:</strong> 2018</p>
+                        </div>
+                    </div>
+                    <div class="business">
+                        <img src="images/chamber-commerce.jpg" alt="Rexburg Manufacturing logo" width="80" height="80">
+                        <div class="business-info">
+                            <h3>Rexburg Manufacturing</h3>
+                            <p>Local manufacturing company producing quality products for over 20 years.</p>
+                            <p><strong>Member since:</strong> 2005</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <section class="image-section">
+            <h2 class="text-center">Our Rexburg Business Community</h2>
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/tech.jpg">
+                <source media="(min-width: 769px)" srcset="images/design.jpg">
+                <img src="images/design.jpg" alt="Modern business community in Rexburg" width="1200" height="400">
+            </picture>
+            <p class="text-center mt-1">Rexburg's vibrant business community fosters innovation and collaboration.</p>
+        </section>
+        
+        <section class="cta">
+            <h2>Ready to Grow Your Business in Rexburg?</h2>
+            <p>Join over 300 local businesses who are already benefiting from Chamber membership.</p>
+            <a href="join.html" class="button">Join the Chamber</a>
         </section>
     </main>
-
+    
     <footer>
-        <p>&copy; 2026 | AlertDrive Project | WDD 231</p>
+        <p>&copy; <span id="current-year">2024</span> Rexburg City Chamber of Commerce</p>
+        <p>123 Main Street, Rexburg, ID 83440</p>
+        <p>Phone: (208) 555-0123 | Email: contact@rexburgchamber.org</p>
+        <p><small>WDD 231 Web Frontend Development I Project</small></p>
     </footer>
 </body>
 </html>
