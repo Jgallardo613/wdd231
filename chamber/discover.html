@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - Rexburg Chamber of Commerce</title>
+    <meta name="description" content="Discover local attractions and points of interest in Rexburg, Idaho.">
+    <meta name="author" content="Your Name">
+    
+    <link rel="icon" href="favicon.ico">
+    
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+    
+    <script type="module" src="scripts/discover.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/chamber-commerce.jpg" alt="Rexburg Chamber of Commerce Logo" width="120" height="80">
+                </a>
+                <div>
+                    <h1 class="site-title">Rexburg Chamber of Commerce</h1>
+                </div>
+            </div>
+            
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="discover.html" class="active">Discover</a></li>
+            <li><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content" class="discover-main">
+        <section class="visitor-message" id="visitor-message">
+            <p>Loading visit information...</p>
+        </section>
+
+        <section class="discover-intro">
+            <h1>Discover Rexburg</h1>
+            <p>Explore the beauty and charm of Rexburg, Idaho. From historical landmarks to natural wonders, our city offers something for everyone.</p>
+        </section>
+
+        <section class="gallery-container">
+            <h2>Local Attractions</h2>
+            <div class="gallery" id="gallery">
+                <!-- Cards will be loaded by JavaScript -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading attractions...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="statistics">
+            <h2>Rexburg at a Glance</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Population</h3>
+                    <p class="stat-number">36,000+</p>
+                    <p>Growing community</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Founded</h3>
+                    <p class="stat-number">1883</p>
+                    <p>Rich history</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Elevation</h3>
+                    <p class="stat-number">4,865 ft</p>
+                    <p>Mountain views</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Average Temp</h3>
+                    <p class="stat-number">45°F</p>
+                    <p>Four seasons</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demographics">
+            <h2>Community Demographics</h2>
+            <div class="demo-content">
+                <div class="demo-text">
+                    <h3>A Vibrant Community</h3>
+                    <p>Rexburg is home to Brigham Young University-Idaho, bringing a youthful energy to our city.</p>
+                    <ul>
+                        <li>Median Age: 23 years</li>
+                        <li>Student Population: 20,000+</li>
+                        <li>Family-Friendly Environment</li>
+                        <li>Low Crime Rate</li>
+                        <li>Strong Economic Growth</li>
+                    </ul>
+                </div>
+                <div class="demo-image">
+                    <!-- Remove this image if you don't have community.jpg -->
+                    <!-- <img src="images/community.jpg" alt="Rexburg community gathering" loading="lazy" width="400" height="300"> -->
+                </div>
+            </div>
+        </section>
+
+        <section class="last-visit-info">
+            <h3>Your Visit History</h3>
+            <p>Days since last visit: <span id="days-since-visit">0</span></p>
+            <p>Total visits: <span id="total-visits">1</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/chamber-commerce.jpg" alt="Chamber Logo" width="100" height="60">
+                    <h3>Rexburg Chamber of Commerce</h3>
+                </div>
+                <p>123 Main Street<br>Rexburg, ID 83440</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>📧 info@rexburgchamber.org</p>
+                <p>📞 (208) 555-1234</p>
+                <p>🕒 Mon-Fri: 9am-5pm</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentyear"></span> Rexburg Chamber of Commerce | Your Name | WDD 231</p>
+            <p><span id="lastmodified"></span></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+        document.getElementById('lastmodified').textContent = document.lastModified;
+        
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
