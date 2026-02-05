@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover - Rexburg Chamber of Commerce</title>
     <meta name="description" content="Discover local attractions and points of interest in Rexburg, Idaho.">
-    <meta name="author" content="Your Name">
     
+    <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
     
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/medium.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <!-- CSS Files - REMOVE discover.css if it doesn't exist -->
+    <link rel="stylesheet" href="styles/base.css"> <!-- Your existing CSS -->
     
-    <script type="module" src="scripts/discover.js" defer></script>
+    <!-- JavaScript - Use .js NOT .mjs -->
+    <script src="scripts/discover.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -29,7 +29,7 @@
                 </div>
             </div>
             
-            <button class="hamburger">
+            <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -38,7 +38,7 @@
     </header>
 
     <nav>
-        <ul>
+        <ul id="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="directory.html">Directory</a></li>
             <li><a href="discover.html" class="active">Discover</a></li>
@@ -47,23 +47,23 @@
     </nav>
 
     <main id="main-content" class="discover-main">
-        <section class="visitor-message" id="visitor-message">
-            <p>Loading visit information...</p>
-        </section>
+        <!-- Visitor Message -->
+        <div id="visitor-message">
+            <span id="visit-msg">Welcome to Rexburg!</span>
+            <button id="close-msg" aria-label="Close message">×</button>
+        </div>
 
         <section class="discover-intro">
             <h1>Discover Rexburg</h1>
             <p>Explore the beauty and charm of Rexburg, Idaho. From historical landmarks to natural wonders, our city offers something for everyone.</p>
         </section>
 
+        <!-- Cards Container -->
         <section class="gallery-container">
             <h2>Local Attractions</h2>
-            <div class="gallery" id="gallery">
-                <!-- Cards will be loaded by JavaScript -->
-                <div class="loading-spinner">
-                    <div class="spinner"></div>
-                    <p>Loading attractions...</p>
-                </div>
+            <div class="cards-grid" id="cards-container">
+                <!-- Cards will load here -->
+                <p>Loading attractions...</p>
             </div>
         </section>
 
@@ -108,16 +108,9 @@
                     </ul>
                 </div>
                 <div class="demo-image">
-                    <!-- Remove this image if you don't have community.jpg -->
-                    <!-- <img src="images/community.jpg" alt="Rexburg community gathering" loading="lazy" width="400" height="300"> -->
+                    <!-- Optional image placeholder -->
                 </div>
             </div>
-        </section>
-
-        <section class="last-visit-info">
-            <h3>Your Visit History</h3>
-            <p>Days since last visit: <span id="days-since-visit">0</span></p>
-            <p>Total visits: <span id="total-visits">1</span></p>
         </section>
     </main>
 
@@ -150,23 +143,27 @@
         
         <div class="footer-bottom">
             <p>&copy; <span id="currentyear"></span> Rexburg Chamber of Commerce | Your Name | WDD 231</p>
-            <p><span id="lastmodified"></span></p>
+            <p id="lastmodified"></p>
         </div>
     </footer>
 
+    <!-- ADD THIS SCRIPT - It's missing! -->
     <script>
+        // Set current year and last modified date
         document.getElementById('currentyear').textContent = new Date().getFullYear();
-        document.getElementById('lastmodified').textContent = document.lastModified;
+        document.getElementById('lastmodified').textContent = 'Last Modified: ' + document.lastModified;
         
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('nav ul');
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
         
-        if (hamburger) {
+        if (hamburger && navMenu) {
             hamburger.addEventListener('click', () => {
                 hamburger.classList.toggle('active');
                 navMenu.classList.toggle('active');
             });
             
+            // Close menu when clicking links
             document.querySelectorAll('nav a').forEach(link => {
                 link.addEventListener('click', () => {
                     hamburger.classList.remove('active');
