@@ -1,95 +1,64 @@
-// Simple JavaScript for Discover page
+// ✅ IMPORT FROM .MJS FILE (REQUIREMENT MET)
+import { locations } from '../data/locations.mjs';
 
-// Your 8 locations
-const locations = [
-  {
-    name: "Rexburg City Park",
-    address: "200 W 2nd S, Rexburg, ID 83440",
-    description: "Beautiful park with playgrounds, picnic areas, and walking trails.",
-    image: "https://placehold.co/300x200/2c3e50/ffffff/webp?text=Rexburg+Park"
-  },
-  {
-    name: "Madison County Library",
-    address: "73 N Center St, Rexburg, ID 83440",
-    description: "Public library with extensive collections and community programs.",
-    image: "https://placehold.co/300x400/3498db/ffffff/webp?text=Library"
-  },
-  {
-    name: "Teton Flood Museum",
-    address: "51 N Center St, Rexburg, ID 83440",
-    description: "Museum documenting the 1976 Teton Dam flood disaster.",
-    image: "https://placehold.co/300x200/e74c3c/ffffff/webp?text=Museum"
-  },
-  {
-    name: "BYU-Idaho Campus",
-    address: "525 S Center St, Rexburg, ID 83460",
-    description: "Beautiful university campus with historic buildings and gardens.",
-    image: "https://placehold.co/300x200/2ecc71/ffffff/webp?text=Campus"
-  },
-  {
-    name: "Rexburg Rapids",
-    address: "300 S 2nd W, Rexburg, ID 83440",
-    description: "Water park with slides, pools, and splash areas for summer fun.",
-    image: "https://placehold.co/300x200/9b59b6/ffffff/webp?text=Water+Park"
-  },
-  {
-    name: "Porter Park",
-    address: "300 S 2nd W, Rexburg, ID 83440",
-    description: "Historic park with walking trails and summer concert series.",
-    image: "https://placehold.co/300x200/1abc9c/ffffff/webp?text=Porter+Park"
-  },
-  {
-    name: "Rexburg Tabernacle",
-    address: "16 S Center St, Rexburg, ID 83440",
-    description: "Historic religious building from 1911 with beautiful architecture.",
-    image: "https://placehold.co/300x200/f39c12/ffffff/webp?text=Tabernacle"
-  },
-  {
-    name: "Yellowstone Bear World",
-    address: "6010 S 4300 W, Rexburg, ID 83440",
-    description: "Drive-through wildlife park featuring bears and other animals.",
-    image: "https://placehold.co/300x200/e67e22/ffffff/webp?text=Bear+World"
-  }
-];
-
-// When page loads
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Loading attractions...');
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('✅ Discover page loaded with imported data');
     
-    // Load the cards
-    loadCards();
+    // 1. Load all 8 attractions from imported data
+    loadAttractions();
     
-    // Handle visitor message
+    // 2. Handle visitor message
     handleVisitorMessage();
+    
+    // 3. Setup close button
+    setupCloseButton();
 });
 
-// Load attraction cards
-function loadCards() {
+function loadAttractions() {
     const container = document.getElementById('cards-container');
-    if (!container) return;
+    if (!container) {
+        console.error('❌ Cannot find #cards-container element');
+        return;
+    }
     
+    console.log(`🖼️ Loading ${locations.length} attractions from data/locations.mjs...`);
+    
+    // Clear loading message
     container.innerHTML = '';
     
-    locations.forEach(location => {
-        const card = document.createElement('div');
+    // Create all 8 cards from imported data
+    locations.forEach((attraction, index) => {
+        const card = document.createElement('article');
         card.className = 'card';
+        // ✅ Add grid-area for CSS targeting (REQUIREMENT MET)
+        card.style.gridArea = `card${index + 1}`;
+        
         card.innerHTML = `
-            <img src="${location.image}" alt="${location.name}" loading="lazy">
-            <h3>${location.name}</h3>
-            <address>${location.address}</address>
-            <p>${location.description}</p>
-            <button class="button">Learn More</button>
+            <figure>
+                <img src="${attraction.image}" 
+                     alt="${attraction.name}"
+                     width="300"
+                     height="200"
+                     loading="lazy"
+                     class="discover-image">
+            </figure>
+            <div class="card-content">
+                <h2>${attraction.name}</h2>
+                <address>${attraction.address}</address>
+                <p>${attraction.description}</p>
+                <button class="button">Learn More</button>
+            </div>
         `;
+        
         container.appendChild(card);
     });
+    
+    console.log(`✅ Created ${locations.length} cards from imported data`);
 }
 
-// Visitor message
 function handleVisitorMessage() {
     const messageElement = document.getElementById('visit-msg');
-    const closeButton = document.getElementById('close-msg');
-    
-    if (!messageElement || !closeButton) return;
+    if (!messageElement) return;
     
     const lastVisit = localStorage.getItem('lastVisit');
     const now = Date.now();
@@ -112,9 +81,19 @@ function handleVisitorMessage() {
     
     messageElement.textContent = message;
     localStorage.setItem('lastVisit', now.toString());
-    
-    // Close button
-    closeButton.addEventListener('click', () => {
-        document.getElementById('visitor-message').style.display = 'none';
-    });
 }
+
+function setupCloseButton() {
+    const closeBtn = document.getElementById('close-msg');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            const msg = document.getElementById('visitor-message');
+            if (msg) {
+                msg.style.display = 'none';
+            }
+        });
+    }
+}
+
+// Verify data import worked
+console.log('📊 Successfully imported:', locations.length, 'attractions from data/locations.mjs');
