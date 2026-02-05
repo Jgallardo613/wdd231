@@ -57,7 +57,7 @@ header {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1rem; /* CHANGED: 2rem → 1rem */
 }
 
 nav a {
