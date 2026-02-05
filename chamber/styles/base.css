@@ -99,7 +99,7 @@ footer {
     color: var(--text-light);
     text-align: center;
     padding: 2rem;
-    margin-top: 2rem; /* FIXED: Reduced from 3rem to 2rem */
+    margin-top: 2rem;
 }
 
 footer p {
@@ -194,9 +194,7 @@ footer p {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* ===== DISCOVER PAGE FIXES ONLY ===== */
-
-/* Fix footer spacing and organization */
+/* ===== DISCOVER PAGE FIXES ===== */
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -249,7 +247,6 @@ footer p {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Fix statistics and demographics spacing */
 .statistics,
 .demographics {
     margin: 2rem 0;
@@ -296,6 +293,21 @@ footer p {
     }
 }
 
+.demo-image {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.demo-image img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+
 .demo-text ul {
     margin: 1rem 0 0 1.5rem;
 }
@@ -305,7 +317,6 @@ footer p {
     color: #555;
 }
 
-/* Fix gallery container */
 .gallery-container {
     margin: 2rem 0;
 }
@@ -315,7 +326,6 @@ footer p {
     margin-bottom: 1.5rem;
 }
 
-/* Discover intro */
 .discover-intro {
     text-align: center;
     padding: 2rem;
@@ -325,7 +335,6 @@ footer p {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Visitor Message */
 #visitor-message {
     background: var(--primary-color);
     color: var(--text-light);
@@ -348,7 +357,6 @@ footer p {
     cursor: pointer;
 }
 
-/* Cards Grid with Grid Template Areas */
 .cards-grid {
     display: grid;
     gap: 1.5rem;
@@ -410,7 +418,6 @@ footer p {
     margin-bottom: 1.5rem;
 }
 
-/* Medium screens (641px - 1024px) */
 @media (min-width: 641px) {
     .cards-grid {
         grid-template-columns: 1fr 1fr;
@@ -421,26 +428,23 @@ footer p {
             "card7 card8";
     }
     
-    /* Image hover effects for desktop only */
     .card:hover img {
         filter: brightness(1.1) contrast(1.1);
         transform: scale(1.02);
     }
 }
 
-/* Large screens (1025px and above) - FIXED: 3 columns instead of 4 */
 @media (min-width: 1025px) {
     .cards-grid {
-        grid-template-columns: repeat(3, 1fr);  /* CHANGED: 4 → 3 */
+        grid-template-columns: repeat(3, 1fr);
         grid-template-areas: 
-            "card1 card2 card3"   /* CHANGED: remove card4 */
-            "card4 card5 card6"   /* CHANGED: shift everything */
-            "card7 card8 .";      /* CHANGED: add new row with empty space */
+            "card1 card2 card3"
+            "card4 card5 card6"
+            "card7 card8 .";
         gap: 2rem;
     }
 }
 
-/* Assign grid areas to cards */
 .card:nth-child(1) { grid-area: card1; }
 .card:nth-child(2) { grid-area: card2; }
 .card:nth-child(3) { grid-area: card3; }
