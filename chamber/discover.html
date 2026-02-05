@@ -6,17 +6,13 @@
     <title>Discover - Rexburg Chamber of Commerce</title>
     <meta name="description" content="Discover local attractions and points of interest in Rexburg, Idaho.">
     
-    <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
-    
-    <!-- CSS Files - REMOVE discover.css if it doesn't exist -->
-    <link rel="stylesheet" href="styles/base.css"> <!-- Your existing CSS -->
-    
-    <!-- JavaScript - Use .js NOT .mjs -->
-    <script src="scripts/discover.js" defer></script>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/discover.css">
+    <script type="module" src="scripts/discover.js" defer></script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <header>
         <div class="header-container">
@@ -47,7 +43,6 @@
     </nav>
 
     <main id="main-content" class="discover-main">
-        <!-- Visitor Message -->
         <div id="visitor-message">
             <span id="visit-msg">Welcome to Rexburg!</span>
             <button id="close-msg" aria-label="Close message">×</button>
@@ -58,11 +53,9 @@
             <p>Explore the beauty and charm of Rexburg, Idaho. From historical landmarks to natural wonders, our city offers something for everyone.</p>
         </section>
 
-        <!-- Cards Container -->
         <section class="gallery-container">
             <h2>Local Attractions</h2>
             <div class="cards-grid" id="cards-container">
-                <!-- Cards will load here -->
                 <p>Loading attractions...</p>
             </div>
         </section>
@@ -108,7 +101,7 @@
                     </ul>
                 </div>
                 <div class="demo-image">
-                    <!-- Optional image placeholder -->
+                    <img src="images/park.webp" alt="Rexburg community park gathering" loading="lazy">
                 </div>
             </div>
         </section>
@@ -142,35 +135,9 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; <span id="currentyear"></span> Rexburg Chamber of Commerce | Your Name | WDD 231</p>
+            <p>&copy; <span id="currentyear"></span> Rexburg Chamber of Commerce | Jeffrey Gallardo | WDD 231</p>
             <p id="lastmodified"></p>
         </div>
     </footer>
-
-    <!-- ADD THIS SCRIPT - It's missing! -->
-    <script>
-        // Set current year and last modified date
-        document.getElementById('currentyear').textContent = new Date().getFullYear();
-        document.getElementById('lastmodified').textContent = 'Last Modified: ' + document.lastModified;
-        
-        // Hamburger menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
-        
-        if (hamburger && navMenu) {
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-            
-            // Close menu when clicking links
-            document.querySelectorAll('nav a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-        }
-    </script>
 </body>
 </html>
