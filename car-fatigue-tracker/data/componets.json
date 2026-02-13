@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Brake Pads",
+    "category": "Brakes",
+    "wear": 85,
+    "status": "critical",
+    "cost": 285
+  },
+  {
+    "id": 2,
+    "name": "Engine Oil",
+    "category": "Fluids",
+    "wear": 90,
+    "status": "critical",
+    "cost": 75
+  },
+  {
+    "id": 3,
+    "name": "Timing Belt",
+    "category": "Engine",
+    "wear": 75,
+    "status": "warning",
+    "cost": 850
+  },
+  {
+    "id": 4,
+    "name": "Battery",
+    "category": "Electrical",
+    "wear": 40,
+    "status": "normal",
+    "cost": 180
+  },
+  {
+    "id": 5,
+    "name": "Tires",
+    "category": "Suspension",
+    "wear": 50,
+    "status": "normal",
+    "cost": 650
+  },
+  {
+    "id": 6,
+    "name": "Spark Plugs",
+    "category": "Engine",
+    "wear": 30,
+    "status": "normal",
+    "cost": 220
+  },
+  {
+    "id": 7,
+    "name": "Air Filter",
+    "category": "Engine",
+    "wear": 80,
+    "status": "warning",
+    "cost": 45
+  },
+  {
+    "id": 8,
+    "name": "Transmission Fluid",
+    "category": "Fluids",
+    "wear": 55,
+    "status": "normal",
+    "cost": 320
+  },
+  {
+    "id": 9,
+    "name": "Brake Rotors",
+    "category": "Brakes",
+    "wear": 25,
+    "status": "normal",
+    "cost": 450
+  },
+  {
+    "id": 10,
+    "name": "Shock Absorbers",
+    "category": "Suspension",
+    "wear": 60,
+    "status": "normal",
+    "cost": 600
+  },
+  {
+    "id": 11,
+    "name": "Power Steering Fluid",
+    "category": "Fluids",
+    "wear": 35,
+    "status": "normal",
+    "cost": 95
+  },
+  {
+    "id": 12,
+    "name": "Cabin Air Filter",
+    "category": "Interior",
+    "wear": 85,
+    "status": "critical",
+    "cost": 35
+  },
+  {
+    "id": 13,
+    "name": "Fuel Filter",
+    "category": "Engine",
+    "wear": 20,
+    "status": "normal",
+    "cost": 85
+  },
+  {
+    "id": 14,
+    "name": "Coolant",
+    "category": "Fluids",
+    "wear": 70,
+    "status": "warning",
+    "cost": 160
+  },
+  {
+    "id": 15,
+    "name": "Serpentine Belt",
+    "category": "Engine",
+    "wear": 45,
+    "status": "normal",
+    "cost": 150
+  }
+]
