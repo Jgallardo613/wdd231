@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Driver Safety Tips and Fatigue Prevention">
+    <meta name="author" content="Student Name">
+    <title>Safety Tips | Driver Fatigue Tracker</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <div class="health-icon">🚗</div>
+        <h1 class="dash-title">Driver<span>Fatigue</span>Tracker</h1>
+    </header>
+
+    <nav class="instrument-nav">
+        <button class="instrument-btn" onclick="window.location.href='index.html'">Dashboard</button>
+        <button class="instrument-btn" onclick="window.location.href='analytics.html'">Analytics</button>
+        <button class="instrument-btn active" onclick="window.location.href='safety-tips.html'">Safety Tips</button>
+    </nav>
+
+    <!-- ID ADDED TO MAIN TAG - ONLY CHANGE -->
+    <main id="main-content" class="dashboard-container">
+        <div class="energy-section">
+            <h2 class="section-title">Driver Safety Level</h2>
+            <div class="energy-gauge">
+                <div class="gauge-circle">
+                    <div class="gauge-value">SAFE</div>
+                </div>
+                <div class="gauge-labels">
+                    <span>Risk</span>
+                    <span>Safety</span>
+                    <span>Safe</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="symptoms-panel">
+            <h2 class="section-title">Safety Tips</h2>
+            <div class="symptoms-grid">
+                <div class="symptom-item mental">
+                    <div class="symptom-icon">🛌</div>
+                    <div class="symptom-name">Sleep Well</div>
+                    <div class="symptom-level">7-9 hours before driving</div>
+                </div>
+                
+                <div class="symptom-item physical">
+                    <div class="symptom-icon">⏱️</div>
+                    <div class="symptom-name">Take Breaks</div>
+                    <div class="symptom-level">Every 2 hours</div>
+                </div>
+                
+                <div class="symptom-item emotional">
+                    <div class="symptom-icon">💧</div>
+                    <div class="symptom-name">Stay Hydrated</div>
+                    <div class="symptom-level">Drink water regularly</div>
+                </div>
+                
+                <div class="symptom-item cognitive">
+                    <div class="symptom-icon">🍎</div>
+                    <div class="symptom-name">Eat Light</div>
+                    <div class="symptom-level">Avoid heavy meals</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metrics-panel">
+            <h2 class="section-title">Warning Signs</h2>
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <div class="metric-label">Yawning frequently</div>
+                    <div class="metric-value high">Take Break</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill high"></div>
+                    </div>
+                </div>
+                
+                <div class="metric-item">
+                    <div class="metric-label">Heavy eyelids</div>
+                    <div class="metric-value poor">Stop Now</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill poor"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions-panel">
+            <h2 class="section-title">Quick Actions</h2>
+            <div class="action-buttons">
+                <button class="action-btn recovery">
+                    <div class="btn-icon">🅿️</div>
+                    <div class="btn-text">Find Rest Stop</div>
+                </button>
+                
+                <button class="action-btn hydration">
+                    <div class="btn-icon">☕</div>
+                    <div class="btn-text">Get Coffee</div>
+                </button>
+            </div>
+            
+            <div class="recommendations">
+                <h3>Emergency Protocol</h3>
+                <ul>
+                    <li>If drowsy, pull over IMMEDIATELY</li>
+                    <li>Call for help if needed</li>
+                    <li>Never drive impaired</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <span>WDD 231 Final Project</span>
+            <span>Driver Fatigue Tracker</span>
+            <a href="attributions.html" class="footer-link">Attributions</a>
+            <a href="https://youtube.com/your-demo" class="footer-link" target="_blank">Video Demo</a>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
