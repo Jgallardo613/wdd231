@@ -3,160 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Driver Fatigue Tracker - Monitor alertness and prevent drowsy driving">
-    <meta name="author" content="Student Name">
+    <meta name="author" content="Jgallardo613">
+    <meta name="description" content="Driver Fatigue Tracker - Monitor alertness and prevent drowsy driving with real-time metrics and safety recommendations">
     <title>Driver Fatigue Tracker | Dashboard</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Driver Fatigue Tracker | Dashboard">
+    <meta property="og:description" content="Monitor alertness and prevent drowsy driving with real-time metrics and safety recommendations.">
+    <meta property="og:image" content="https://jgallardo613.github.io/wdd231/car-fatigue-tracker/images/favicon.ico">
+    <meta property="og:url" content="https://jgallardo613.github.io/wdd231/car-fatigue-tracker/index.html">
+    <meta property="og:type" content="website">
+    
+    <!-- CSS Files - TWO FILES ✅ -->
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
+    <link rel="stylesheet" href="styles/fixes.css">
 </head>
 <body>
-
     <header class="dashboard-header">
-        <div class="health-icon">🚗</div>
-        <h1 class="dash-title">Driver<span>Fatigue</span>Tracker</h1>
+        <h1>DriverFatigueTracker</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="tracker.html">Tracker</a></li>
+                <li><a href="insights.html">Insights</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger-menu" aria-label="Menu">☰</button>
+        </nav>
     </header>
-
-    <nav class="instrument-nav">
-        <button class="instrument-btn active" onclick="window.location.href='index.html'">Dashboard</button>
-        <button class="instrument-btn" onclick="window.location.href='analytics.html'">Analytics</button>
-        <button class="instrument-btn" onclick="window.location.href='safety-tips.html'">Safety Tips</button>
-    </nav>
-
-    <!-- ID ADDED TO MAIN TAG - ONLY CHANGE -->
-    <main id="main-content" class="dashboard-container">
-        <div class="energy-section">
-            <h2 class="section-title">Driver Alertness Level</h2>
-            <div class="energy-gauge">
-                <div class="gauge-circle">
-                    <div class="gauge-fill"></div>
-                    <div class="gauge-value">72%</div>
-                </div>
-                <div class="gauge-labels">
-                    <span>Drowsy</span>
-                    <span>Alertness</span>
-                    <span>Alert</span>
-                </div>
+    
+    <main>
+        <!-- Driver Alertness Section -->
+        <section class="alertness-section">
+            <h2>Driver Alertness Level</h2>
+            <div class="alertness-meter">
+                <div class="progress-70" id="alertness-bar">70%</div>
             </div>
-            
-            <div class="fatigue-warning">
-                <div class="warning-icon">⚠️</div>
-                <div class="warning-text">
-                    <strong>Moderate Fatigue Detected</strong>
-                    <p>Consider taking a break soon</p>
-                </div>
+            <div class="alertness-status">
+                <span class="alert-icon">⚠️</span>
+                <span class="status-text">Good Alertness</span>
             </div>
-        </div>
+            <p class="alertness-message">Stay focused and safe</p>
+        </section>
 
-        <div class="symptoms-panel">
-            <h2 class="section-title">Fatigue Symptoms</h2>
-            <div class="symptoms-grid">
-                <div class="symptom-item mental active">
-                    <div class="symptom-icon">👁️</div>
-                    <div class="symptom-name">Heavy Eyelids</div>
-                    <div class="symptom-level">High</div>
-                </div>
-                
-                <div class="symptom-item physical active">
-                    <div class="symptom-icon">😴</div>
-                    <div class="symptom-name">Yawning</div>
-                    <div class="symptom-level">Medium</div>
-                </div>
-                
-                <div class="symptom-item emotional">
-                    <div class="symptom-icon">😔</div>
-                    <div class="symptom-name">Irritability</div>
-                    <div class="symptom-level">Low</div>
-                </div>
-                
-                <div class="symptom-item cognitive">
-                    <div class="symptom-icon">🎯</div>
-                    <div class="symptom-name">Poor Focus</div>
-                    <div class="symptom-level">Medium</div>
-                </div>
-            </div>
-        </div>
+        <!-- Fatigue Symptoms Section -->
+        <section class="symptoms-section">
+            <h2>Fatigue Symptoms</h2>
+            <ul class="symptoms-list" id="symptoms-list">
+                <li>
+                    <span class="symptom-icon">👁️</span>
+                    <span class="symptom-name">Heavy Eyelids</span>
+                    <span class="symptom-level high">High</span>
+                </li>
+                <li>
+                    <span class="symptom-icon">😴</span>
+                    <span class="symptom-name">Yawning</span>
+                    <span class="symptom-level medium">Medium</span>
+                </li>
+                <li>
+                    <span class="symptom-icon">😔</span>
+                    <span class="symptom-name">Irritability</span>
+                    <span class="symptom-level low">Low</span>
+                </li>
+                <li>
+                    <span class="symptom-icon">🎯</span>
+                    <span class="symptom-name">Poor Focus</span>
+                    <span class="symptom-level medium">Medium</span>
+                </li>
+            </ul>
+        </section>
 
-        <div class="metrics-panel">
-            <h2 class="section-title">Driving Metrics</h2>
+        <!-- Driving Metrics Section -->
+        <section class="metrics-section">
+            <h2>Driving Metrics</h2>
             <div class="metrics-grid">
-                <div class="metric-item">
-                    <div class="metric-label">Drive Time</div>
-                    <div class="metric-value high">2h 15m</div>
-                    <div class="metric-bar">
-                        <div class="metric-fill high" style="width: 75%"></div>
-                    </div>
+                <div class="metric-card">
+                    <h3>Drive Time</h3>
+                    <p class="metric-value" id="drive-time">2h 15m</p>
                 </div>
-                
-                <div class="metric-item">
-                    <div class="metric-label">Lane Departures</div>
-                    <div class="metric-value medium">3</div>
-                    <div class="metric-bar">
-                        <div class="metric-fill medium" style="width: 30%"></div>
-                    </div>
+                <div class="metric-card">
+                    <h3>Lane Departures</h3>
+                    <p class="metric-value" id="lane-departures">3</p>
                 </div>
-                
-                <div class="metric-item">
-                    <div class="metric-label">Reaction Time</div>
-                    <div class="metric-value poor">450ms</div>
-                    <div class="metric-bar">
-                        <div class="metric-fill poor" style="width: 90%"></div>
-                    </div>
+                <div class="metric-card">
+                    <h3>Reaction Time</h3>
+                    <p class="metric-value" id="reaction-time">450ms</p>
                 </div>
-                
-                <div class="metric-item">
-                    <div class="metric-label">Steering Variance</div>
-                    <div class="metric-value good">12%</div>
-                    <div class="metric-bar">
-                        <div class="metric-fill good" style="width: 25%"></div>
-                    </div>
+                <div class="metric-card">
+                    <h3>Steering Variance</h3>
+                    <p class="metric-value" id="steering-variance">12%</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="actions-panel">
-            <h2 class="section-title">Fatigue Management</h2>
-            <div class="action-buttons">
-                <button class="action-btn recovery">
-                    <div class="btn-icon">☕</div>
-                    <div class="btn-text">Take Break</div>
-                </button>
-                
-                <button class="action-btn hydration">
-                    <div class="btn-icon">💧</div>
-                    <div class="btn-text">Log Hydration</div>
-                </button>
-                
-                <button class="action-btn rest">
-                    <div class="btn-icon">😴</div>
-                    <div class="btn-text">Schedule Rest</div>
-                </button>
-                
-                <button class="action-btn journal">
-                    <div class="btn-icon">📝</div>
-                    <div class="btn-text">Report Fatigue</div>
-                </button>
-            </div>
-            
-            <div class="recommendations">
-                <h3>Safety Recommendations</h3>
-                <ul>
-                    <li>Take a 15-minute break now</li>
-                    <li>Drink water and have a light snack</li>
-                    <li>Avoid driving for more than 2 hours continuously</li>
-                </ul>
-            </div>
-        </div>
+        <!-- Fatigue Management Section -->
+        <section class="management-section">
+            <h2>Fatigue Management</h2>
+            <h3>Safety Recommendations</h3>
+            <ul class="recommendations-list" id="recommendations-list">
+                <li>Take a 15-minute break now</li>
+                <li>Drink water and have a light snack</li>
+                <li>Avoid driving for more than 2 hours continuously</li>
+            </ul>
+            <button class="primary-btn" id="refresh-data">Refresh Data</button>
+            <button class="primary-btn" id="details-btn">View Details</button>
+        </section>
     </main>
 
-    <footer class="dashboard-footer">
-        <div class="footer-content">
-            <span>WDD 231 Final Project</span>
-            <span>Driver Fatigue Tracker</span>
-            <a href="attributions.html" class="footer-link">Attributions</a>
-            <a href="https://youtube.com/your-demo" class="footer-link" target="_blank">Video Demo</a>
-        </div>
+    <footer>
+        <p>&copy; 2026 Jgallardo613</p>
+        <p><a href="attributions.html">Attributions</a></p>
+        <p><a href="https://youtube.com/your-demo" target="_blank">📹 Video Demo</a></p>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js" type="module"></script>
 </body>
 </html>
