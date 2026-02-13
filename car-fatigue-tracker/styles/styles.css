@@ -37,6 +37,7 @@ body {
     gap: 20px;
     border-bottom: 1px solid var(--panel-border);
     flex-wrap: wrap;
+    color: #f8fafc !important;
 }
 
 .health-icon {
@@ -76,7 +77,7 @@ body {
     padding: 15px 20px;
     background: transparent;
     border: none;
-    color: var(--text-dim);
+    color: #e6f1ff !important;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
@@ -91,9 +92,9 @@ body {
 }
 
 .instrument-btn.active {
-    color: var(--energy-green);
+    color: #6bcf7f !important;
     border-bottom-color: var(--energy-green);
-    background: rgba(107, 207, 127, 0.1);
+    background: rgba(107, 207, 127, 0.2) !important;
 }
 
 /* Make sure nav is full width */
@@ -197,14 +198,14 @@ nav {
 }
 
 .warning-text strong {
-    color: var(--fatigue-orange);
+    color: #ffb3b3 !important;
     font-size: 18px;
     display: block;
     margin-bottom: 5px;
 }
 
 .warning-text p {
-    color: var(--text-dim);
+    color: #e6f1ff !important;
 }
 
 /* SYMPTOMS PANEL */
@@ -246,6 +247,7 @@ nav {
 .symptom-icon {
     font-size: 32px;
     margin-bottom: 15px;
+    color: #e6f1ff !important;
 }
 
 .symptom-name {
@@ -318,7 +320,7 @@ nav {
 }
 
 .metric-label {
-    color: var(--text-dim);
+    color: #b3d9ff !important;
     font-size: 14px;
     margin-bottom: 10px;
 }
@@ -416,10 +418,11 @@ nav {
 .btn-icon {
     font-size: 32px;
     margin-bottom: 12px;
+    color: #f8fafc !important;
 }
 
 .btn-text {
-    color: var(--text-light);
+    color: #f8fafc !important;
     font-size: 16px;
     font-weight: 600;
 }
@@ -442,16 +445,20 @@ nav {
 }
 
 .recommendations li {
-    color: var(--text-light);
+    color: #f8fafc !important;
     margin-bottom: 10px;
     padding-left: 25px;
     position: relative;
+    background-color: rgba(107, 207, 127, 0.15) !important;
+    padding: 8px 8px 8px 25px !important;
+    border-radius: 4px !important;
+    margin-bottom: 8px !important;
 }
 
 .recommendations li::before {
     content: '✓';
     position: absolute;
-    left: 0;
+    left: 8px;
     color: var(--energy-green);
     font-weight: bold;
 }
@@ -565,7 +572,27 @@ nav {
         text-align: center;
     }
 }
+
+/* Width classes for metric bars */
 .width-45 { width: 45%; }
 .width-60 { width: 60%; }
 .width-75 { width: 75%; }
 .width-30 { width: 30%; }
+
+/* ===== FINAL CONTRAST FIXES ===== */
+
+/* Fix body and header black text issue */
+body, .dashboard-header {
+    color: #f8fafc !important;
+}
+
+/* Fix any remaining dark text */
+p, span, div:not(.metric-fill):not(.gauge-circle):not(.health-icon) {
+    color: #e6f1ff;
+}
+
+/* Keep colored metric values */
+.metric-value.poor { color: #ffb3b3 !important; }
+.metric-value.high { color: #ffcc99 !important; }
+.metric-value.good { color: #b3ffb3 !important; }
+.metric-value.medium { color: #b3d9ff !important; }
