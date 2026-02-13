@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analytics and reports for driver fatigue monitoring">
+    <meta name="author" content="Student Name">
+    <title>Analytics | Driver Fatigue Tracker</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <div class="health-icon">🚗</div>
+        <h1 class="dash-title">Driver<span>Fatigue</span>Tracker</h1>
+    </header>
+
+    <nav class="instrument-nav">
+        <button class="instrument-btn" onclick="window.location.href='index.html'">Dashboard</button>
+        <button class="instrument-btn active" onclick="window.location.href='analytics.html'">Analytics</button>
+        <button class="instrument-btn" onclick="window.location.href='safety-tips.html'">Safety Tips</button>
+    </nav>
+
+    <!-- ID ADDED TO MAIN TAG - ONLY CHANGE -->
+    <main id="main-content" class="dashboard-container">
+        <div class="energy-section">
+            <h2 class="section-title">Fatigue Analytics</h2>
+            <p>View your fatigue patterns and statistics</p>
+        </div>
+
+        <div class="symptoms-panel">
+            <h2 class="section-title">Charts</h2>
+            <div class="symptoms-grid">
+                <div class="symptom-item">
+                    <div class="symptom-icon">📈</div>
+                    <div class="symptom-name">Alertness Trends</div>
+                    <div class="symptom-level">Chart loads with JavaScript</div>
+                </div>
+                <div class="symptom-item">
+                    <div class="symptom-icon">🤒</div>
+                    <div class="symptom-name">Symptom Distribution</div>
+                    <div class="symptom-level">Chart loads with JavaScript</div>
+                </div>
+                <div class="symptom-item">
+                    <div class="symptom-icon">⏰</div>
+                    <div class="symptom-name">Time of Day</div>
+                    <div class="symptom-level">Chart loads with JavaScript</div>
+                </div>
+                <div class="symptom-item">
+                    <div class="symptom-icon">🛣️</div>
+                    <div class="symptom-name">Trip Duration</div>
+                    <div class="symptom-level">Chart loads with JavaScript</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metrics-panel">
+            <h2 class="section-title">Recent Events</h2>
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <div class="metric-label">2024-01-15</div>
+                    <div class="metric-value good">72%</div>
+                    <div>Yawning - 15 min break</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">2024-01-14</div>
+                    <div class="metric-value poor">58%</div>
+                    <div>Heavy eyelids - Stopped driving</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-label">2024-01-13</div>
+                    <div class="metric-value good">85%</div>
+                    <div>None - Normal driving</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <span>WDD 231 Final Project</span>
+            <span>Driver Fatigue Tracker</span>
+            <a href="attributions.html" class="footer-link">Attributions</a>
+            <a href="https://youtube.com/your-demo" class="footer-link" target="_blank">Video Demo</a>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
