@@ -15,24 +15,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- CSS -->
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Driver Fatigue Tracker | Dashboard">
+    <meta property="og:description" content="Monitor driver alertness and fatigue symptoms to prevent drowsy driving.">
+    <meta property="og:image" content="https://jgallardo613.github.io/wdd231/car-fatigue-tracker/images/favicon.ico">
+    <meta property="og:url" content="https://jgallardo613.github.io/wdd231/car-fatigue-tracker/index.html">
+    
+    <!-- CSS Files -->
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/second.css">
 </head>
 <body>
     <header class="dashboard-header">
         <div class="health-icon">🚗</div>
         <h1 class="dash-title">Driver<span>FatigueTracker</span></h1>
-        <nav>
-            <div class="instrument-nav">
-                <button class="instrument-btn active">Dashboard</button>
-                <button class="instrument-btn">Analytics</button>
-                <button class="instrument-btn">Safety Tips</button>
-            </div>
-        </nav>
     </header>
     
+    <nav class="instrument-nav">
+        <button class="instrument-btn active">Dashboard</button>
+        <button class="instrument-btn">Analytics</button>
+        <button class="instrument-btn">Safety Tips</button>
+    </nav>
+    
     <main class="dashboard-container">
-        <!-- Energy Section -->
+        <!-- Driver Alertness Section -->
         <section class="energy-section">
             <h2 class="section-title">Driver Alertness Level</h2>
             <div class="energy-gauge">
@@ -53,7 +59,7 @@
             </div>
         </section>
 
-        <!-- Symptoms Panel -->
+        <!-- Fatigue Symptoms Section -->
         <section class="symptoms-panel">
             <h2 class="section-title">Fatigue Symptoms</h2>
             <div class="symptoms-grid">
@@ -80,7 +86,7 @@
             </div>
         </section>
 
-        <!-- Metrics Panel -->
+        <!-- Driving Metrics Section -->
         <section class="metrics-panel">
             <h2 class="section-title">Driving Metrics</h2>
             <div class="metrics-grid">
@@ -107,27 +113,9 @@
             </div>
         </section>
 
-        <!-- Actions Panel -->
+        <!-- Fatigue Management Section -->
         <section class="actions-panel">
             <h2 class="section-title">Fatigue Management</h2>
-            <div class="action-buttons">
-                <button class="action-btn recovery">
-                    <span class="btn-icon">😴</span>
-                    <span class="btn-text">Rest</span>
-                </button>
-                <button class="action-btn hydration">
-                    <span class="btn-icon">💧</span>
-                    <span class="btn-text">Hydrate</span>
-                </button>
-                <button class="action-btn rest">
-                    <span class="btn-icon">🧘</span>
-                    <span class="btn-text">Break</span>
-                </button>
-                <button class="action-btn journal">
-                    <span class="btn-icon">📝</span>
-                    <span class="btn-text">Log</span>
-                </button>
-            </div>
             
             <div class="recommendations">
                 <h3>Safety Recommendations</h3>
