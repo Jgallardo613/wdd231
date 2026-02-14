@@ -118,17 +118,91 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // ===== FORM ACTION PAGE - DISPLAY URL PARAMETERS =====
+    // Check if we're on the form-action page
+    if (window.location.pathname.includes('form-action.html')) {
+        const formResults = document.getElementById('form-results');
+        if (formResults) {
+            const params = new URLSearchParams(window.location.search);
+            
+            if (params.size === 0) {
+                formResults.innerHTML = '<p style="color: #ffb3b3; padding: 20px; text-align: center;">No form data received. Please submit the form on the dashboard.</p>';
+            } else {
+                let html = '<h3 style="color: #6bcf7f; margin-bottom: 15px;">Your Submitted Information:</h3>';
+                html += '<ul style="list-style: none; padding: 0;">';
+                
+                for (let [key, value] of params) {
+                    // Format the key name (replace hyphens with spaces and capitalize)
+                    const formattedKey = key.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                    html += `
+                        <li style="margin-bottom: 10px; padding: 10px; background: rgba(107,207,127,0.1); border-radius: 6px;">
+                            <strong style="color: #b3d9ff;">${formattedKey}:</strong> 
+                            <span style="color: #e6f1ff; margin-left: 10px;">${value}</span>
+                        </li>
+                    `;
+                }
+                
+                html += '</ul>';
+                formResults.innerHTML = html;
+            }
+        }
+    }
+
     // ===== LOCAL STORAGE EXAMPLE =====
     // Save current page visit
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     localStorage.setItem('lastVisited', currentPage);
     localStorage.setItem('lastVisitTime', new Date().toLocaleString());
     
+    // Load last visit data
+    const lastVisit = localStorage.getItem('lastVisitTime');
+    if (lastVisit && !window.location.pathname.includes('form-action.html')) {
+        console.log(`Last visit: ${lastVisit}`);
+        // Optional: Display last visit in footer
+        const footer = document.querySelector('.footer-content');
+        if (footer) {
+            const visitMsg = document.createElement('span');
+            visitMsg.style.cssText = 'color: #86efac; font-size: 12px; margin-top: 5px;';
+            visitMsg.textContent = `Last visit: ${lastVisit}`;
+            footer.appendChild(visitMsg);
+        }
+    }
+
     // ===== WELCOME MESSAGE (first visit only) =====
     const firstVisit = localStorage.getItem('firstVisit');
     if (!firstVisit) {
         console.log('Welcome to Driver Fatigue Tracker!');
         localStorage.setItem('firstVisit', 'true');
+    }
+
+    // ===== MODAL DIALOG =====
+    const modal = document.getElementById('fatigueModal');
+    const closeBtn = document.getElementById('closeModal');
+    const breakBtn = document.getElementById('takeBreak');
+
+    // Show modal after 15 seconds if on homepage
+    if (modal && window.location.pathname.includes('index.html')) {
+        setTimeout(() => {
+            modal.showModal();
+        }, 15000);
+    }
+
+    // Close modal events
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => modal.close());
+    }
+    if (breakBtn) {
+        breakBtn.addEventListener('click', () => {
+            alert('✅ Take a 15-minute break to stay alert!');
+            modal.close();
+        });
+    }
+
+    // Click outside to close
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.close();
+        });
     }
 
     console.log('Driver Fatigue Tracker initialized successfully');
