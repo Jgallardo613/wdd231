@@ -3,72 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Attributions and resources used">
-    <meta name="author" content="Student Name">
     <title>Attributions | Driver Fatigue Tracker</title>
-    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
 
-    <header class="dashboard-header">
-        <div class="health-icon">🚗</div>
-        <h1 class="dash-title">Driver<span>Fatigue</span>Tracker</h1>
+    <header>
+        <div>🚗</div>
+        <h1>Driver Fatigue Tracker</h1>
     </header>
 
-    <nav class="instrument-nav">
-        <button class="instrument-btn" onclick="window.location.href='index.html'">Dashboard</button>
-        <button class="instrument-btn" onclick="window.location.href='analytics.html'">Analytics</button>
-        <button class="instrument-btn" onclick="window.location.href='safety-tips.html'">Safety Tips</button>
+    <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="safety-tips.html">Safety Tips</a>
     </nav>
 
-    <!-- ID ADDED TO MAIN TAG - ONLY CHANGE -->
     <main id="main-content">
-        <div style="max-width: 800px; margin: 50px auto; padding: 40px; background: var(--panel-bg); border: 1px solid var(--panel-border); border-radius: 16px;">
-            <h1 style="color: var(--energy-green); margin-bottom: 30px; border-bottom: 2px solid var(--panel-border); padding-bottom: 15px;">Attributions & Resources</h1>
-            
-            <div style="margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid var(--panel-border);">
-                <div style="font-weight: 600; color: var(--text-light); margin-bottom: 5px;">Chart.js</div>
-                <div style="color: var(--text-dim);">JavaScript charting library used for analytics</div>
-                <a href="https://www.chartjs.org/" style="color: var(--health-blue); text-decoration: none;" target="_blank">https://www.chartjs.org/</a>
-            </div>
-            
-            <div style="margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid var(--panel-border);">
-                <div style="font-weight: 600; color: var(--text-light); margin-bottom: 5px;">Font & Icons</div>
-                <div style="color: var(--text-dim);">Emoji icons and system fonts</div>
-                <a href="https://emojipedia.org/" style="color: var(--health-blue); text-decoration: none;" target="_blank">https://emojipedia.org/</a>
-            </div>
-            
-            <div style="margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid var(--panel-border);">
-                <div style="font-weight: 600; color: var(--text-light); margin-bottom: 5px;">Color Palette</div>
-                <div style="color: var(--text-dim);">Custom dark theme for fatigue tracking</div>
-                <span style="color: var(--text-dim);">Original design by Student Name</span>
-            </div>
-            
-            <div style="margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid var(--panel-border);">
-                <div style="font-weight: 600; color: var(--text-light); margin-bottom: 5px;">Fatigue Statistics</div>
-                <div style="color: var(--text-dim);">Data based on NHTSA drowsy driving research</div>
-                <a href="https://www.nhtsa.gov/risky-driving/drowsy-driving" style="color: var(--health-blue); text-decoration: none;" target="_blank">NHTSA Drowsy Driving</a>
-            </div>
-            
-            <div style="margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid var(--panel-border);">
-                <div style="font-weight: 600; color: var(--text-light); margin-bottom: 5px;">Safety Tips</div>
-                <div style="color: var(--text-dim);">Recommendations from CDC and safety organizations</div>
-                <a href="https://www.cdc.gov/sleep/index.html" style="color: var(--health-blue); text-decoration: none;" target="_blank">CDC Sleep and Sleep Disorders</a>
-            </div>
-            
-            <p style="color: var(--text-dim); margin-top: 30px; text-align: center;">
-                WDD 231 Final Project - Driver Fatigue Tracker
-            </p>
+        <h2>Attributions & Resources</h2>
+        
+        <div>
+            <h3>Chart.js</h3>
+            <p>JavaScript charting library used for analytics</p>
+            <a href="https://www.chartjs.org/" target="_blank">https://www.chartjs.org/</a>
+        </div>
+        
+        <div>
+            <h3>Font & Icons</h3>
+            <p>Emoji icons and system fonts</p>
+            <a href="https://emojipedia.org/" target="_blank">https://emojipedia.org/</a>
+        </div>
+        
+        <div>
+            <h3>Color Palette</h3>
+            <p>Custom dark theme for fatigue tracking</p>
+            <p>Original design by Student Name</p>
+        </div>
+        
+        <div>
+            <h3>Fatigue Statistics</h3>
+            <p>Data based on NHTSA drowsy driving research</p>
+            <a href="https://www.nhtsa.gov/risky-driving/drowsy-driving" target="_blank">NHTSA Drowsy Driving</a>
+        </div>
+        
+        <div>
+            <h3>Safety Tips</h3>
+            <p>Recommendations from CDC and safety organizations</p>
+            <a href="https://www.cdc.gov/sleep/index.html" target="_blank">CDC Sleep and Sleep Disorders</a>
         </div>
     </main>
 
-    <footer class="dashboard-footer">
-        <div class="footer-content">
-            <span>WDD 231 Final Project</span>
-            <span>Driver Fatigue Tracker</span>
-            <a href="attributions.html" class="footer-link">Attributions</a>
-            <a href="https://youtube.com/your-demo" class="footer-link" target="_blank">Video Demo</a>
-        </div>
+    <footer>
+        <p>WDD 231 Final Project - Driver Fatigue Tracker</p>
+        <a href="attributions.html">Attributions</a> | 
+        <a href="https://www.loom.com/share/4280902a71dc43fc843a6e0f11ec25a4" target="_blank">📹 Video Demo</a>
     </footer>
 
     <script src="scripts/main.js"></script>
