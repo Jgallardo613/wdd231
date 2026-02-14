@@ -1,13 +1,5 @@
-body {
-    color: #e6f1ff !important; /* ADD THIS LINE */
-    font-family: 'Segoe UI', 'Inter', sans-serif;
-    background: var(--dash-bg);
-    min-height: 100vh;
-    line-height: 1.6;
-}
-/* DRIVER FATIGUE TRACKER - COMPLETE CSS FOR ALL PAGES */
+/* DRIVER FATIGUE TRACKER - COMPLETE CSS */
 :root {
-    /* YOUR EXACT COLORS */
     --health-blue: #4d96ff;
     --energy-green: #6bcf7f;
     --fatigue-orange: #ff9966;
@@ -27,15 +19,16 @@ body {
     box-sizing: border-box;
 }
 
+/* ===== BASE STYLES ===== */
 body {
     font-family: 'Segoe UI', 'Inter', sans-serif;
     background: var(--dash-bg);
-    color: #f8fafc !important;
+    color: #e6f1ff !important;
     min-height: 100vh;
     line-height: 1.6;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 .dashboard-header {
     background: var(--panel-bg);
     padding: 20px 30px;
@@ -44,7 +37,7 @@ body {
     gap: 20px;
     border-bottom: 1px solid var(--panel-border);
     flex-wrap: wrap;
-    color: #f8fafc !important;
+    color: #e6f1ff !important;
 }
 
 .health-icon {
@@ -69,13 +62,11 @@ body {
     font-weight: 700;
 }
 
-/* NAVIGATION */
+/* ===== NAVIGATION ===== */
 .instrument-nav {
     display: flex;
     background: var(--panel-bg);
     border-bottom: 1px solid var(--panel-border);
-    padding: 0;
-    margin: 0;
     width: 100%;
 }
 
@@ -104,7 +95,7 @@ body {
     background: rgba(107, 207, 127, 0.2) !important;
 }
 
-/* MAIN CONTAINER */
+/* ===== MAIN LAYOUT ===== */
 .dashboard-container {
     padding: 30px;
     max-width: 1400px;
@@ -122,7 +113,7 @@ body {
     border-bottom: 2px solid var(--panel-border);
 }
 
-/* ENERGY GAUGE */
+/* ===== ENERGY GAUGE ===== */
 .energy-section {
     background: var(--panel-bg);
     border: 1px solid var(--panel-border);
@@ -178,7 +169,7 @@ body {
     font-size: 14px;
 }
 
-/* FATIGUE WARNING */
+/* ===== FATIGUE WARNING ===== */
 .fatigue-warning {
     background: rgba(255, 153, 102, 0.1);
     border: 2px solid var(--fatigue-orange);
@@ -192,6 +183,7 @@ body {
 
 .warning-icon {
     font-size: 32px;
+    color: #ff9966 !important;
 }
 
 .warning-text strong {
@@ -205,7 +197,7 @@ body {
     color: #e6f1ff !important;
 }
 
-/* SYMPTOMS PANEL */
+/* ===== SYMPTOMS PANEL ===== */
 .symptoms-panel {
     background: var(--panel-bg);
     border: 1px solid var(--panel-border);
@@ -259,7 +251,7 @@ body {
     border: 1px solid rgba(255,255,255,0.3) !important;
 }
 
-/* METRICS PANEL */
+/* ===== METRICS PANEL ===== */
 .metrics-panel {
     background: var(--panel-bg);
     border: 1px solid var(--panel-border);
@@ -292,20 +284,14 @@ body {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 15px;
+    color: #e6f1ff !important;
 }
 
-.metric-value.poor {
-    color: #ffb3b3 !important;
-}
-.metric-value.high {
-    color: #ffcc99 !important;
-}
-.metric-value.good {
-    color: #b3ffb3 !important;
-}
-.metric-value.medium {
-    color: #b3d9ff !important;
-}
+/* METRIC COLORS - SINGLE DECLARATION */
+.metric-value.poor { color: #ffb3b3 !important; }
+.metric-value.high { color: #ffcc99 !important; }
+.metric-value.good { color: #b3ffb3 !important; }
+.metric-value.medium { color: #b3d9ff !important; }
 
 .metric-bar {
     height: 8px;
@@ -324,7 +310,7 @@ body {
 .metric-fill.good { background: var(--energy-green); }
 .metric-fill.medium { background: var(--health-blue); }
 
-/* ACTIONS PANEL */
+/* ===== ACTIONS PANEL ===== */
 .actions-panel {
     background: var(--panel-bg);
     border: 1px solid var(--panel-border);
@@ -352,12 +338,12 @@ body {
 }
 
 .recommendations li {
-    color: #f8fafc !important;
+    color: #e6f1ff !important;
     margin-bottom: 10px;
-    padding: 8px 8px 8px 25px !important;
+    padding: 8px 8px 8px 25px;
     position: relative;
     background-color: rgba(107, 207, 127, 0.15) !important;
-    border-radius: 4px !important;
+    border-radius: 4px;
 }
 
 .recommendations li::before {
@@ -368,7 +354,7 @@ body {
     font-weight: bold;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 .dashboard-footer {
     background: var(--panel-bg);
     padding: 25px 30px;
@@ -396,26 +382,19 @@ body {
     color: #f8fafc !important;
 }
 
-/* Width classes for metric bars */
+/* ===== WIDTH CLASSES ===== */
 .width-45 { width: 45%; }
 .width-60 { width: 60%; }
 .width-75 { width: 75%; }
 .width-30 { width: 30%; }
 
-/* ULTIMATE CONTRAST FIX */
-body, .dashboard-header, p, li, div, h1, h2, h3, span {
+/* ===== ULTIMATE CONTRAST FIX ===== */
+body, .dashboard-header, header, nav, main, section, 
+div, p, li, span, h1, h2, h3, h4, h5, h6, button {
     color: #e6f1ff !important;
 }
-.instrument-btn.active, .metric-value.good {
-    color: #6bcf7f !important;
-}
-.metric-value.poor { color: #ffb3b3 !important; }
-.metric-value.high { color: #ffcc99 !important; }
-.metric-value.medium { color: #b3d9ff !important; }
-.fatigue-warning strong { color: #ffb3b3 !important; }
-.footer-link { color: #86efac !important; }
 
-/* ========== RESPONSIVE DESIGN ========== */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
     .dashboard-container {
         grid-template-columns: 1fr;
@@ -493,31 +472,4 @@ body, .dashboard-header, p, li, div, h1, h2, h3, span {
         width: 100%;
         text-align: center;
     }
-}
-/* NUCLEAR OPTION - FORCES ALL TEXT TO BE LIGHT */
-body, .dashboard-header, header, nav, main, section, div, p, li, span, h1, h2, h3, h4, h5, h6, button, a {
-    color: #e6f1ff !important;
-}
-
-/* EXCEPTIONS - KEEP THESE COLORS */
-.instrument-btn.active, .metric-value.good, .energy-green {
-    color: #6bcf7f !important;
-}
-.metric-value.poor {
-    color: #ffb3b3 !important;
-}
-.metric-value.high {
-    color: #ffcc99 !important;
-}
-.metric-value.medium {
-    color: #b3d9ff !important;
-}
-.fatigue-warning strong {
-    color: #ffb3b3 !important;
-}
-.fatigue-warning .warning-icon {
-    color: #ff9966 !important;
-}
-.footer-link {
-    color: #86efac !important;
 }
