@@ -1,3 +1,10 @@
+body {
+    color: #e6f1ff !important; /* ADD THIS LINE */
+    font-family: 'Segoe UI', 'Inter', sans-serif;
+    background: var(--dash-bg);
+    min-height: 100vh;
+    line-height: 1.6;
+}
 /* DRIVER FATIGUE TRACKER - COMPLETE CSS FOR ALL PAGES */
 :root {
     /* YOUR EXACT COLORS */
@@ -486,4 +493,31 @@ body, .dashboard-header, p, li, div, h1, h2, h3, span {
         width: 100%;
         text-align: center;
     }
+}
+/* NUCLEAR OPTION - FORCES ALL TEXT TO BE LIGHT */
+body, .dashboard-header, header, nav, main, section, div, p, li, span, h1, h2, h3, h4, h5, h6, button, a {
+    color: #e6f1ff !important;
+}
+
+/* EXCEPTIONS - KEEP THESE COLORS */
+.instrument-btn.active, .metric-value.good, .energy-green {
+    color: #6bcf7f !important;
+}
+.metric-value.poor {
+    color: #ffb3b3 !important;
+}
+.metric-value.high {
+    color: #ffcc99 !important;
+}
+.metric-value.medium {
+    color: #b3d9ff !important;
+}
+.fatigue-warning strong {
+    color: #ffb3b3 !important;
+}
+.fatigue-warning .warning-icon {
+    color: #ff9966 !important;
+}
+.footer-link {
+    color: #86efac !important;
 }
