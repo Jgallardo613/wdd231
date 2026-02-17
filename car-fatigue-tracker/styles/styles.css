@@ -634,3 +634,7 @@ button.instrument-btn.active {
 .instrument-btn.active { color: #6bcf7f !important; }
 .attribution-title { color: #6bcf7f !important; }
 .dash-title span { color: #6bcf7f !important; }
+/* FINAL SPAN FIX FOR BOTH PAGES */
+span {
+    color: #ffffff !important;
+}
