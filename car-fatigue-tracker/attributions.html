@@ -3,61 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jgallardo613">
+    <meta name="description" content="Attributions and resources used in the Driver Fatigue Tracker project">
     <title>Attributions | Driver Fatigue Tracker</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Attributions | Driver Fatigue Tracker">
+    <meta property="og:description" content="Attributions and resources used in the Driver Fatigue Tracker project">
+    <meta property="og:image" content="https://jgallardo613.github.io/wdd231/car-fatigue-tracker/images/favicon.ico">
+    <meta property="og:url" content="https://jgallardo613.github.io/wdd231/car-fatigue-tracker/attributions.html">
+    <meta property="og:type" content="website">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/second.css">
 </head>
 <body>
-
-    <header>
-        <div>🚗</div>
-        <h1>Driver Fatigue Tracker</h1>
+    <header class="dashboard-header">
+        <div class="health-icon">🚗</div>
+        <h1 class="dash-title">Driver<span>FatigueTracker</span></h1>
+        
+        <!-- Hamburger Menu -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-label">☰</label>
+        
+        <nav class="mobile-menu">
+            <a href="index.html" class="instrument-btn">Dashboard</a>
+            <a href="analytics.html" class="instrument-btn">Analytics</a>
+            <a href="safety-tips.html" class="instrument-btn">Safety Tips</a>
+        </nav>
     </header>
-
-    <nav>
-        <a href="index.html">Dashboard</a>
-        <a href="analytics.html">Analytics</a>
-        <a href="safety-tips.html">Safety Tips</a>
-    </nav>
-
-    <main id="main-content">
-        <h2>Attributions & Resources</h2>
-        
-        <div>
-            <h3>Chart.js</h3>
-            <p>JavaScript charting library used for analytics</p>
-            <a href="https://www.chartjs.org/" target="_blank">https://www.chartjs.org/</a>
-        </div>
-        
-        <div>
-            <h3>Font & Icons</h3>
-            <p>Emoji icons and system fonts</p>
-            <a href="https://emojipedia.org/" target="_blank">https://emojipedia.org/</a>
-        </div>
-        
-        <div>
-            <h3>Color Palette</h3>
-            <p>Custom dark theme for fatigue tracking</p>
-            <p>Original design by Student Name</p>
-        </div>
-        
-        <div>
-            <h3>Fatigue Statistics</h3>
-            <p>Data based on NHTSA drowsy driving research</p>
-            <a href="https://www.nhtsa.gov/risky-driving/drowsy-driving" target="_blank">NHTSA Drowsy Driving</a>
-        </div>
-        
-        <div>
-            <h3>Safety Tips</h3>
-            <p>Recommendations from CDC and safety organizations</p>
-            <a href="https://www.cdc.gov/sleep/index.html" target="_blank">CDC Sleep and Sleep Disorders</a>
-        </div>
+    
+    <main class="dashboard-container" style="display: block; max-width: 800px; margin: 0 auto;">
+        <section class="energy-section" style="grid-column: auto; grid-row: auto;">
+            <h2 class="section-title">Attributions & Resources</h2>
+            
+            <div class="metrics-grid" style="grid-template-columns: 1fr;">
+                <!-- Chart.js -->
+                <div class="metric-item">
+                    <h3 class="metric-label" style="font-size: 18px;">Chart.js</h3>
+                    <p class="metric-value" style="font-size: 16px; font-weight: normal;">JavaScript charting library used for analytics</p>
+                    <a href="https://www.chartjs.org/" target="_blank" class="footer-link">https://www.chartjs.org/</a>
+                </div>
+                
+                <!-- Font & Icons -->
+                <div class="metric-item">
+                    <h3 class="metric-label" style="font-size: 18px;">Font & Icons</h3>
+                    <p class="metric-value" style="font-size: 16px; font-weight: normal;">Emoji icons and system fonts</p>
+                    <a href="https://emojipedia.org/" target="_blank" class="footer-link">https://emojipedia.org/</a>
+                </div>
+                
+                <!-- Color Palette -->
+                <div class="metric-item">
+                    <h3 class="metric-label" style="font-size: 18px;">Color Palette</h3>
+                    <p class="metric-value" style="font-size: 16px; font-weight: normal;">Custom dark theme for fatigue tracking</p>
+                    <p class="metric-value" style="font-size: 16px; font-weight: normal; color: #b3d9ff;">Original design by Jgallardo613</p>
+                </div>
+                
+                <!-- Fatigue Statistics -->
+                <div class="metric-item">
+                    <h3 class="metric-label" style="font-size: 18px;">Fatigue Statistics</h3>
+                    <p class="metric-value" style="font-size: 16px; font-weight: normal;">Data based on NHTSA drowsy driving research</p>
+                    <a href="https://www.nhtsa.gov/risky-driving/drowsy-driving" target="_blank" class="footer-link">NHTSA Drowsy Driving</a>
+                </div>
+                
+                <!-- Safety Tips -->
+                <div class="metric-item">
+                    <h3 class="metric-label" style="font-size: 18px;">Safety Tips</h3>
+                    <p class="metric-value" style="font-size: 16px; font-weight: normal;">Recommendations from CDC and safety organizations</p>
+                    <a href="https://www.cdc.gov/sleep/index.html" target="_blank" class="footer-link">CDC Sleep and Sleep Disorders</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>WDD 231 Final Project - Driver Fatigue Tracker</p>
-        <a href="attributions.html">Attributions</a> | 
-        <a href="https://www.loom.com/share/4280902a71dc43fc843a6e0f11ec25a4" target="_blank">📹 Video Demo</a>
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <span>&copy; 2026 Jgallardo613</span>
+            <a href="attributions.html" class="footer-link">Attributions</a>
+            <a href="https://www.loom.com/share/4280902a71dc43fc843a6e0f11ec25a4" class="footer-link" target="_blank">📹 Video Demo</a>
+        </div>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js" type="module"></script>
 </body>
 </html>
