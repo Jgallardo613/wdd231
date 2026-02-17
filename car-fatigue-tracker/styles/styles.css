@@ -24,7 +24,7 @@
 body {
     font-family: 'Segoe UI', 'Inter', sans-serif;
     background: var(--dash-bg);
-    color: var(--pure-white) !important;
+    color: var(--pure-white);
     min-height: 100vh;
     line-height: 1.6;
 }
@@ -38,7 +38,7 @@ body {
     gap: 20px;
     border-bottom: 1px solid var(--panel-border);
     flex-wrap: wrap;
-    color: var(--pure-white) !important;
+    color: var(--pure-white);
     position: relative;
 }
 
@@ -97,7 +97,7 @@ body {
     padding: 15px 20px;
     background: transparent;
     border: none;
-    color: var(--pure-white) !important;
+    color: var(--pure-white);
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
@@ -112,9 +112,9 @@ body {
 }
 
 .instrument-btn.active {
-    color: #6bcf7f !important;
+    color: #6bcf7f;
     border-bottom-color: var(--energy-green);
-    background: rgba(107, 207, 127, 0.2) !important;
+    background: rgba(107, 207, 127, 0.2);
 }
 
 /* ===== MAIN LAYOUT ===== */
@@ -205,18 +205,18 @@ body {
 
 .warning-icon {
     font-size: 32px;
-    color: #ff9966 !important;
+    color: #ff9966;
 }
 
 .warning-text strong {
-    color: #ffb3b3 !important;
+    color: #ffb3b3;
     font-size: 18px;
     display: block;
     margin-bottom: 5px;
 }
 
 .warning-text p {
-    color: var(--pure-white) !important;
+    color: var(--pure-white);
 }
 
 /* ===== SYMPTOMS PANEL ===== */
@@ -252,7 +252,7 @@ body {
 .symptom-icon {
     font-size: 32px;
     margin-bottom: 15px;
-    color: var(--pure-white) !important;
+    color: var(--pure-white);
 }
 
 .symptom-name {
@@ -267,10 +267,10 @@ body {
     padding: 6px 12px;
     border-radius: 20px;
     display: inline-block;
-    background: #000000 !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    border: 1px solid rgba(255,255,255,0.3) !important;
+    background: #000000;
+    color: #ffffff;
+    font-weight: 700;
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
 /* ===== METRICS PANEL ===== */
@@ -297,7 +297,7 @@ body {
 }
 
 .metric-label {
-    color: #b3d9ff !important;
+    color: #b3d9ff;
     font-size: 14px;
     margin-bottom: 10px;
 }
@@ -306,13 +306,13 @@ body {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 15px;
-    color: var(--pure-white) !important;
+    color: var(--pure-white);
 }
 
-.metric-value.poor { color: #ffb3b3 !important; }
-.metric-value.high { color: #ffcc99 !important; }
-.metric-value.good { color: #b3ffb3 !important; }
-.metric-value.medium { color: #b3d9ff !important; }
+.metric-value.poor { color: #ffb3b3; }
+.metric-value.high { color: #ffcc99; }
+.metric-value.good { color: #b3ffb3; }
+.metric-value.medium { color: #b3d9ff; }
 
 .metric-bar {
     height: 8px;
@@ -359,11 +359,11 @@ body {
 }
 
 .recommendations li {
-    color: var(--pure-white) !important;
+    color: var(--pure-white);
     margin-bottom: 10px;
     padding: 8px 8px 8px 25px;
     position: relative;
-    background-color: rgba(107, 207, 127, 0.15) !important;
+    background-color: rgba(107, 207, 127, 0.15);
     border-radius: 4px;
 }
 
@@ -405,25 +405,26 @@ body {
 }
 
 .attribution-title {
-    color: #6bcf7f !important;
+    color: #6bcf7f;
     font-size: 18px;
     margin-bottom: 10px;
 }
 
 .attribution-description {
-    color: var(--pure-white) !important;
+    color: var(--pure-white);
     font-size: 16px;
     font-weight: normal;
     margin-bottom: 8px;
 }
 
 .attribution-author {
-    color: #b3d9ff !important;
+    color: #b3d9ff;
 }
 
 .attribution-link {
     display: inline-block;
     margin-top: 5px;
+    color: #86efac;
 }
 
 /* ===== FOOTER ===== */
@@ -445,13 +446,13 @@ body {
 }
 
 .footer-link {
-    color: #86efac !important;
+    color: #86efac;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-link:hover {
-    color: var(--pure-white) !important;
+    color: var(--pure-white);
 }
 
 /* ===== WIDTH CLASSES ===== */
@@ -576,25 +577,3 @@ body {
         text-align: center;
     }
 }
-/* ABSOLUTE FINAL FIX - OVERRIDES ALL BLACK TEXT */
-body, .dashboard-header, .dashboard-header *,
-header, nav, main, section, div, p, li, span, h1, h2, h3, h4, h5, h6, button, a,
-.symptom-name, .metric-label, .attribution-description, .attribution-author {
-    color: #ffffff !important;
-}
-
-/* Preserve colored elements */
-.instrument-btn.active, .metric-value.poor, .metric-value.high, 
-.metric-value.good, .metric-value.medium, .warning-icon, 
-.fatigue-warning strong, .footer-link, .attribution-title {
-    color: inherit !important;
-}
-.metric-value.poor { color: #ffb3b3 !important; }
-.metric-value.high { color: #ffcc99 !important; }
-.metric-value.good { color: #b3ffb3 !important; }
-.metric-value.medium { color: #b3d9ff !important; }
-.warning-icon { color: #ff9966 !important; }
-.fatigue-warning strong { color: #ffb3b3 !important; }
-.footer-link { color: #86efac !important; }
-.instrument-btn.active { color: #6bcf7f !important; }
-.attribution-title { color: #6bcf7f !important; }
