@@ -582,3 +582,28 @@ div, p, li, span, h1, h2, h3, h4, h5, h6, button {
         text-align: center;
     }
 }
+/* ===== ABSOLUTE CONTRAST NUCLEAR OPTION ===== */
+body, .dashboard-header, header, nav, main, section, 
+div, p, li, span, h1, h2, h3, h4, h5, h6, button, a,
+.symptom-name, .metric-label, .recommendations li,
+.fatigue-warning p, .warning-text p {
+    color: #ffffff !important;
+    text-shadow: 0 0 2px rgba(0,0,0,0.5) !important;
+}
+
+/* Keep colored elements */
+.instrument-btn.active, .metric-value.good, .energy-green,
+.metric-value.poor, .metric-value.high, .metric-value.medium,
+.fatigue-warning strong, .warning-icon, .footer-link {
+    color: inherit !important;
+    text-shadow: none !important;
+}
+
+.metric-value.poor { color: #ffb3b3 !important; }
+.metric-value.high { color: #ffcc99 !important; }
+.metric-value.good { color: #b3ffb3 !important; }
+.metric-value.medium { color: #b3d9ff !important; }
+.fatigue-warning strong { color: #ffb3b3 !important; }
+.warning-icon { color: #ff9966 !important; }
+.footer-link { color: #86efac !important; }
+.instrument-btn.active { color: #6bcf7f !important; }
