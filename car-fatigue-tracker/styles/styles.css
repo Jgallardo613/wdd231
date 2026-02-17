@@ -28,7 +28,6 @@ body {
     line-height: 1.6;
 }
 
-/* ===== HEADER & NAVIGATION ===== */
 .dashboard-header {
     background: var(--panel-bg);
     padding: 20px 30px;
@@ -62,12 +61,10 @@ body {
     color: #6bcf7f;
 }
 
-/* ===== HAMBURGER MENU ===== */
 .menu-toggle { display: none; }
 .hamburger-label { display: none; font-size: 2rem; cursor: pointer; color: var(--pure-white); margin-left: auto; padding: 0 15px; z-index: 1001; }
 .mobile-menu { display: flex; width: 100%; }
 
-/* ===== NAVIGATION ===== */
 .instrument-nav {
     display: flex;
     background: var(--panel-bg);
@@ -100,7 +97,6 @@ body {
     background: rgba(107, 207, 127, 0.2);
 }
 
-/* ===== MAIN LAYOUT ===== */
 .dashboard-container {
     padding: 30px;
     max-width: 1400px;
@@ -118,7 +114,6 @@ body {
     border-bottom: 2px solid var(--panel-border);
 }
 
-/* ===== ENERGY GAUGE ===== */
 .energy-section {
     background: var(--panel-bg);
     border: 1px solid var(--panel-border);
@@ -167,7 +162,6 @@ body {
     font-size: 14px;
 }
 
-/* ===== FATIGUE WARNING ===== */
 .fatigue-warning {
     background: rgba(255, 153, 102, 0.15);
     border: 2px solid #ff9966;
@@ -183,7 +177,6 @@ body {
 .warning-text strong { color: #ffb3b3; font-size: 18px; display: block; margin-bottom: 5px; }
 .warning-text p { color: var(--pure-white); }
 
-/* ===== SYMPTOMS PANEL ===== */
 .symptoms-panel {
     background: var(--panel-bg);
     border: 1px solid var(--panel-border);
@@ -227,7 +220,6 @@ body {
     border: 1px solid rgba(255,255,255,0.3);
 }
 
-/* ===== METRICS PANEL ===== */
 .metrics-panel {
     background: var(--panel-bg);
     border: 1px solid var(--panel-border);
@@ -270,7 +262,6 @@ body {
 .metric-fill.good { background: #6bcf7f; }
 .metric-fill.medium { background: #4d96ff; }
 
-/* ===== ACTIONS PANEL ===== */
 .actions-panel {
     background: var(--panel-bg);
     border: 1px solid var(--panel-border);
@@ -307,7 +298,6 @@ body {
     font-weight: bold;
 }
 
-/* ===== ATTRIBUTIONS PAGE ===== */
 .attributions-container {
     padding: 30px;
     max-width: 800px;
@@ -341,7 +331,6 @@ body {
 .attribution-author { color: #b3d9ff; }
 .attribution-link { display: inline-block; margin-top: 5px; color: #86efac; }
 
-/* ===== FOOTER ===== */
 .dashboard-footer {
     background: var(--panel-bg);
     padding: 25px 30px;
@@ -362,16 +351,16 @@ body {
 .footer-link { color: #86efac; text-decoration: none; transition: color 0.3s; }
 .footer-link:hover { color: var(--pure-white); }
 
-/* ===== WIDTH CLASSES ===== */
 .width-45 { width: 45%; }
 .width-60 { width: 60%; }
 .width-75 { width: 75%; }
 .width-30 { width: 30%; }
 
-/* ===== FINAL SPAN FIX ===== */
-span { color: var(--pure-white); }
+/* ===== SPAN FIX - ONLY ADDITION ===== */
+span {
+    color: var(--pure-white);
+}
 
-/* ===== HAMBURGER MENU ===== */
 @media (max-width: 768px) {
     .hamburger-label { display: block; }
     .mobile-menu { display: none; flex-direction: column; width: 100%; background: var(--panel-bg); position: absolute; top: 80px; left: 0; padding: 20px; z-index: 1000; border-bottom: 1px solid var(--panel-border); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
@@ -379,7 +368,6 @@ span { color: var(--pure-white); }
     .mobile-menu .instrument-btn { width: 100%; text-align: left; padding: 15px; border-bottom: none; margin: 5px 0; }
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
     .dashboard-container { grid-template-columns: 1fr; }
     .energy-section, .symptoms-panel, .metrics-panel, .actions-panel { grid-column: 1; }
