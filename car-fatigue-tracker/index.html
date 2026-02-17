@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <!-- Open Graph Tags - FIXED -->
+    <!-- Open Graph Tags -->
     <meta property="og:title" content="Driver Fatigue Tracker | Dashboard">
     <meta property="og:description" content="Monitor driver alertness and fatigue symptoms to prevent drowsy driving with real-time metrics and safety recommendations.">
     <meta property="og:image" content="https://jgallardo613.github.io/wdd231/car-fatigue-tracker/images/favicon.ico">
@@ -30,13 +30,17 @@
     <header class="dashboard-header">
         <div class="health-icon">🚗</div>
         <h1 class="dash-title">Driver<span>FatigueTracker</span></h1>
+        
+        <!-- HAMBURGER MENU ADDED HERE -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-label">☰</label>
+        
+        <nav class="mobile-menu">
+            <button class="instrument-btn active">Dashboard</button>
+            <button class="instrument-btn">Analytics</button>
+            <button class="instrument-btn">Safety Tips</button>
+        </nav>
     </header>
-    
-    <nav class="instrument-nav">
-        <button class="instrument-btn active">Dashboard</button>
-        <button class="instrument-btn">Analytics</button>
-        <button class="instrument-btn">Safety Tips</button>
-    </nav>
     
     <main class="dashboard-container">
         <!-- Driver Alertness Section -->
