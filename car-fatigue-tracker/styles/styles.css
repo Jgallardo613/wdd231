@@ -38,6 +38,7 @@ body {
     border-bottom: 1px solid var(--panel-border);
     flex-wrap: wrap;
     color: #e6f1ff !important;
+    position: relative;
 }
 
 .health-icon {
@@ -60,6 +61,26 @@ body {
 .dash-title span {
     color: var(--energy-green);
     font-weight: 700;
+}
+
+/* ===== HAMBURGER MENU ===== */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger-label {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-light);
+    margin-left: auto;
+    padding: 0 15px;
+    z-index: 1001;
+}
+
+.mobile-menu {
+    display: flex;
+    width: 100%;
 }
 
 /* ===== NAVIGATION ===== */
@@ -392,6 +413,39 @@ body {
 body, .dashboard-header, header, nav, main, section, 
 div, p, li, span, h1, h2, h3, h4, h5, h6, button {
     color: #e6f1ff !important;
+}
+
+/* ===== HAMBURGER MENU STYLES ===== */
+@media (max-width: 768px) {
+    .hamburger-label {
+        display: block;
+    }
+    
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--panel-bg);
+        position: absolute;
+        top: 80px;
+        left: 0;
+        padding: 20px;
+        z-index: 1000;
+        border-bottom: 1px solid var(--panel-border);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    
+    #menu-toggle:checked ~ .mobile-menu {
+        display: flex;
+    }
+    
+    .mobile-menu .instrument-btn {
+        width: 100%;
+        text-align: left;
+        padding: 15px;
+        border-bottom: none;
+        margin: 5px 0;
+    }
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
