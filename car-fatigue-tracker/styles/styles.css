@@ -61,7 +61,6 @@ body {
 
 .dash-title span {
     color: var(--energy-green);
-    font-weight: 700;
 }
 
 /* ===== HAMBURGER MENU ===== */
@@ -460,33 +459,6 @@ body {
 .width-60 { width: 60%; }
 .width-75 { width: 75%; }
 .width-30 { width: 30%; }
-
-/* ===== ABSOLUTE CONTRAST NUCLEAR OPTION ===== */
-body, .dashboard-header, header, nav, main, section, 
-div, p, li, span, h1, h2, h3, h4, h5, h6, button, a,
-.symptom-name, .metric-label, .recommendations li,
-.fatigue-warning p, .warning-text p,
-.attribution-description, .attribution-author {
-    color: #ffffff !important;
-}
-
-.instrument-btn.active, .metric-value.poor, .metric-value.high, 
-.metric-value.good, .metric-value.medium, .warning-icon, 
-.fatigue-warning strong, .footer-link, .attribution-title,
-.dash-title span {
-    color: inherit !important;
-}
-
-.metric-value.poor { color: #ffb3b3 !important; }
-.metric-value.high { color: #ffcc99 !important; }
-.metric-value.good { color: #b3ffb3 !important; }
-.metric-value.medium { color: #b3d9ff !important; }
-.warning-icon { color: #ff9966 !important; }
-.fatigue-warning strong { color: #ffb3b3 !important; }
-.footer-link { color: #86efac !important; }
-.instrument-btn.active { color: #6bcf7f !important; }
-.attribution-title { color: #6bcf7f !important; }
-.dash-title span { color: #6bcf7f !important; }
 
 /* ===== HAMBURGER MENU STYLES ===== */
 @media (max-width: 768px) {
