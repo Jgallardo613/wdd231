@@ -584,3 +584,53 @@ body {
 .attribution-item {
     border: 1px solid var(--panel-border) !important;
 }
+/* ===== UNIVERSAL CONTRAST FIX - BOTH PAGES ===== */
+
+/* Fix all semi-transparent backgrounds to solid dark */
+.symptom-item, .metric-item, .attribution-item,
+.recommendations, .fatigue-warning, button.instrument-btn.active,
+div[class*="symptom"], div[class*="metric"], div[class*="attribution"] {
+    background-color: #1e3a5f !important;
+    border: 1px solid var(--panel-border) !important;
+}
+
+/* Fix specific elements that need different backgrounds */
+.fatigue-warning {
+    background-color: rgba(255, 153, 102, 0.2) !important;
+    border: 2px solid #ff9966 !important;
+}
+
+.recommendations {
+    background-color: rgba(107, 207, 127, 0.2) !important;
+    border: 1px solid #6bcf7f !important;
+}
+
+.recommendations li {
+    background-color: rgba(107, 207, 127, 0.25) !important;
+    margin: 8px 0 !important;
+    padding: 8px 8px 8px 25px !important;
+}
+
+button.instrument-btn.active {
+    background-color: rgba(107, 207, 127, 0.25) !important;
+    border-bottom: 3px solid #6bcf7f !important;
+}
+
+/* Ensure all text is pure white on solid backgrounds */
+.symptom-item, .metric-item, .attribution-item,
+.symptom-name, .metric-value, .attribution-description,
+.fatigue-warning p, .recommendations li {
+    color: #ffffff !important;
+}
+
+/* Preserve colored elements */
+.metric-value.poor { color: #ffb3b3 !important; }
+.metric-value.high { color: #ffcc99 !important; }
+.metric-value.good { color: #b3ffb3 !important; }
+.metric-value.medium { color: #b3d9ff !important; }
+.warning-icon { color: #ff9966 !important; }
+.fatigue-warning strong { color: #ffb3b3 !important; }
+.footer-link { color: #86efac !important; }
+.instrument-btn.active { color: #6bcf7f !important; }
+.attribution-title { color: #6bcf7f !important; }
+.dash-title span { color: #6bcf7f !important; }
