@@ -392,3 +392,21 @@ span {
     .instrument-nav { flex-direction: column; }
     .instrument-btn { width: 100%; text-align: center; }
 }
+/* MINIMAL FIX FOR INDEX PAGE LOW CONTRAST ELEMENTS */
+button.instrument-btn.active,
+div.fatigue-warning,
+span.warning-icon,
+strong,
+div.symptom-item.active,
+div.recommendations,
+li {
+    background-color: #1e3a5f !important;
+    border: 1px solid currentColor !important;
+}
+
+/* Preserve specific element colors */
+button.instrument-btn.active { color: #6bcf7f !important; border-color: #6bcf7f !important; }
+div.fatigue-warning { border: 2px solid #ff9966 !important; }
+span.warning-icon { color: #ff9966 !important; }
+strong { color: #ffb3b3 !important; }
+div.symptom-item.active { border-color: #ff9966 !important; }
