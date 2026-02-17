@@ -410,3 +410,8 @@ div.fatigue-warning { border: 2px solid #ff9966 !important; }
 span.warning-icon { color: #ff9966 !important; }
 strong { color: #ffb3b3 !important; }
 div.symptom-item.active { border-color: #ff9966 !important; }
+/* FINAL LI FIX */
+.recommendations li {
+    background-color: #1e3a5f !important;
+    color: #ffffff !important;
+}
