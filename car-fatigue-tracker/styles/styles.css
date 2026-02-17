@@ -576,3 +576,11 @@ body {
         text-align: center;
     }
 }
+/* ATTRIBUTIONS PAGE CONTRAST FIX */
+.attribution-item, .attribution-item * {
+    background-color: #112240 !important;
+}
+
+.attribution-item {
+    border: 1px solid var(--panel-border) !important;
+}
