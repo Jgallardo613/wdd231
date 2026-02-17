@@ -576,3 +576,25 @@ body {
         text-align: center;
     }
 }
+/* ABSOLUTE FINAL FIX - OVERRIDES ALL BLACK TEXT */
+body, .dashboard-header, .dashboard-header *,
+header, nav, main, section, div, p, li, span, h1, h2, h3, h4, h5, h6, button, a,
+.symptom-name, .metric-label, .attribution-description, .attribution-author {
+    color: #ffffff !important;
+}
+
+/* Preserve colored elements */
+.instrument-btn.active, .metric-value.poor, .metric-value.high, 
+.metric-value.good, .metric-value.medium, .warning-icon, 
+.fatigue-warning strong, .footer-link, .attribution-title {
+    color: inherit !important;
+}
+.metric-value.poor { color: #ffb3b3 !important; }
+.metric-value.high { color: #ffcc99 !important; }
+.metric-value.good { color: #b3ffb3 !important; }
+.metric-value.medium { color: #b3d9ff !important; }
+.warning-icon { color: #ff9966 !important; }
+.fatigue-warning strong { color: #ffb3b3 !important; }
+.footer-link { color: #86efac !important; }
+.instrument-btn.active { color: #6bcf7f !important; }
+.attribution-title { color: #6bcf7f !important; }
