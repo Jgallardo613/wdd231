@@ -20,7 +20,6 @@
     box-sizing: border-box;
 }
 
-/* ===== BASE STYLES ===== */
 body {
     font-family: 'Segoe UI', 'Inter', sans-serif;
     background: var(--dash-bg);
@@ -29,7 +28,7 @@ body {
     line-height: 1.6;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER & NAVIGATION ===== */
 .dashboard-header {
     background: var(--panel-bg);
     padding: 20px 30px;
@@ -60,28 +59,13 @@ body {
 }
 
 .dash-title span {
-    color: var(--energy-green);
+    color: #6bcf7f;
 }
 
 /* ===== HAMBURGER MENU ===== */
-.menu-toggle {
-    display: none;
-}
-
-.hamburger-label {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--pure-white);
-    margin-left: auto;
-    padding: 0 15px;
-    z-index: 1001;
-}
-
-.mobile-menu {
-    display: flex;
-    width: 100%;
-}
+.menu-toggle { display: none; }
+.hamburger-label { display: none; font-size: 2rem; cursor: pointer; color: var(--pure-white); margin-left: auto; padding: 0 15px; z-index: 1001; }
+.mobile-menu { display: flex; width: 100%; }
 
 /* ===== NAVIGATION ===== */
 .instrument-nav {
@@ -112,7 +96,7 @@ body {
 
 .instrument-btn.active {
     color: #6bcf7f;
-    border-bottom-color: var(--energy-green);
+    border-bottom-color: #6bcf7f;
     background: rgba(107, 207, 127, 0.2);
 }
 
@@ -144,21 +128,14 @@ body {
     grid-row: 1;
 }
 
-.energy-gauge {
-    text-align: center;
-    margin: 30px 0;
-}
+.energy-gauge { text-align: center; margin: 30px 0; }
 
 .gauge-circle {
     width: 200px;
     height: 200px;
     margin: 0 auto;
     border-radius: 50%;
-    background: conic-gradient(
-        var(--energy-green) 0% 65%,
-        var(--fatigue-orange) 65% 85%,
-        var(--exhausted-red) 85% 100%
-    );
+    background: conic-gradient(#6bcf7f 0% 65%, #ff9966 65% 85%, #ff6666 85% 100%);
     position: relative;
     display: flex;
     align-items: center;
@@ -192,8 +169,8 @@ body {
 
 /* ===== FATIGUE WARNING ===== */
 .fatigue-warning {
-    background: rgba(255, 153, 102, 0.1);
-    border: 2px solid var(--fatigue-orange);
+    background: rgba(255, 153, 102, 0.15);
+    border: 2px solid #ff9966;
     border-radius: 12px;
     padding: 20px;
     display: flex;
@@ -202,21 +179,9 @@ body {
     margin-top: 30px;
 }
 
-.warning-icon {
-    font-size: 32px;
-    color: #ff9966;
-}
-
-.warning-text strong {
-    color: #ffb3b3;
-    font-size: 18px;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.warning-text p {
-    color: var(--pure-white);
-}
+.warning-icon { font-size: 32px; color: #ff9966; }
+.warning-text strong { color: #ffb3b3; font-size: 18px; display: block; margin-bottom: 5px; }
+.warning-text p { color: var(--pure-white); }
 
 /* ===== SYMPTOMS PANEL ===== */
 .symptoms-panel {
@@ -235,7 +200,7 @@ body {
 }
 
 .symptom-item {
-    background: rgba(255, 255, 255, 0.05);
+    background: #1e3a5f;
     border: 1px solid var(--panel-border);
     border-radius: 12px;
     padding: 25px;
@@ -244,22 +209,12 @@ body {
 }
 
 .symptom-item.active {
-    border-color: var(--fatigue-orange);
-    background: rgba(255, 153, 102, 0.1);
+    border-color: #ff9966;
+    background: rgba(255, 153, 102, 0.2);
 }
 
-.symptom-icon {
-    font-size: 32px;
-    margin-bottom: 15px;
-    color: var(--pure-white);
-}
-
-.symptom-name {
-    color: var(--pure-white);
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
+.symptom-icon { font-size: 32px; margin-bottom: 15px; color: var(--pure-white); }
+.symptom-name { color: var(--pure-white); font-size: 16px; font-weight: 600; margin-bottom: 8px; }
 
 .symptom-level {
     font-size: 14px;
@@ -289,25 +244,14 @@ body {
 }
 
 .metric-item {
-    background: rgba(255, 255, 255, 0.05);
+    background: #1e3a5f;
     border: 1px solid var(--panel-border);
     border-radius: 12px;
     padding: 20px;
 }
 
-.metric-label {
-    color: #b3d9ff;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.metric-value {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: var(--pure-white);
-}
-
+.metric-label { color: #b3d9ff; font-size: 14px; margin-bottom: 10px; }
+.metric-value { font-size: 28px; font-weight: 700; margin-bottom: 15px; color: var(--pure-white); }
 .metric-value.poor { color: #ffb3b3; }
 .metric-value.high { color: #ffcc99; }
 .metric-value.good { color: #b3ffb3; }
@@ -320,15 +264,11 @@ body {
     overflow: hidden;
 }
 
-.metric-fill {
-    height: 100%;
-    border-radius: 4px;
-}
-
-.metric-fill.poor { background: var(--exhausted-red); }
-.metric-fill.high { background: var(--fatigue-orange); }
-.metric-fill.good { background: var(--energy-green); }
-.metric-fill.medium { background: var(--health-blue); }
+.metric-fill { height: 100%; border-radius: 4px; }
+.metric-fill.poor { background: #ff6666; }
+.metric-fill.high { background: #ff9966; }
+.metric-fill.good { background: #6bcf7f; }
+.metric-fill.medium { background: #4d96ff; }
 
 /* ===== ACTIONS PANEL ===== */
 .actions-panel {
@@ -341,28 +281,21 @@ body {
 }
 
 .recommendations {
-    background: rgba(107, 207, 127, 0.1);
-    border: 1px solid var(--energy-green);
+    background: rgba(107, 207, 127, 0.2);
+    border: 1px solid #6bcf7f;
     border-radius: 12px;
     padding: 25px;
 }
 
-.recommendations h3 {
-    color: var(--energy-green);
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.recommendations ul {
-    list-style: none;
-}
+.recommendations h3 { color: #6bcf7f; margin-bottom: 15px; font-size: 18px; }
+.recommendations ul { list-style: none; }
 
 .recommendations li {
     color: var(--pure-white);
     margin-bottom: 10px;
     padding: 8px 8px 8px 25px;
     position: relative;
-    background-color: rgba(107, 207, 127, 0.15);
+    background-color: rgba(107, 207, 127, 0.25);
     border-radius: 4px;
 }
 
@@ -370,11 +303,11 @@ body {
     content: '✓';
     position: absolute;
     left: 8px;
-    color: var(--energy-green);
+    color: #6bcf7f;
     font-weight: bold;
 }
 
-/* ===== ATTRIBUTIONS PAGE STYLES ===== */
+/* ===== ATTRIBUTIONS PAGE ===== */
 .attributions-container {
     padding: 30px;
     max-width: 800px;
@@ -397,34 +330,16 @@ body {
 }
 
 .attribution-item {
-    background: rgba(255, 255, 255, 0.05);
+    background: #1e3a5f;
     border: 1px solid var(--panel-border);
     border-radius: 8px;
     padding: 20px;
 }
 
-.attribution-title {
-    color: #6bcf7f;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.attribution-description {
-    color: var(--pure-white);
-    font-size: 16px;
-    font-weight: normal;
-    margin-bottom: 8px;
-}
-
-.attribution-author {
-    color: #b3d9ff;
-}
-
-.attribution-link {
-    display: inline-block;
-    margin-top: 5px;
-    color: #86efac;
-}
+.attribution-title { color: #6bcf7f; font-size: 18px; margin-bottom: 10px; }
+.attribution-description { color: var(--pure-white); font-size: 16px; font-weight: normal; margin-bottom: 8px; }
+.attribution-author { color: #b3d9ff; }
+.attribution-link { display: inline-block; margin-top: 5px; color: #86efac; }
 
 /* ===== FOOTER ===== */
 .dashboard-footer {
@@ -444,15 +359,8 @@ body {
     flex-wrap: wrap;
 }
 
-.footer-link {
-    color: #86efac;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-link:hover {
-    color: var(--pure-white);
-}
+.footer-link { color: #86efac; text-decoration: none; transition: color 0.3s; }
+.footer-link:hover { color: var(--pure-white); }
 
 /* ===== WIDTH CLASSES ===== */
 .width-45 { width: 45%; }
@@ -460,185 +368,39 @@ body {
 .width-75 { width: 75%; }
 .width-30 { width: 30%; }
 
-/* ===== HAMBURGER MENU STYLES ===== */
+/* ===== FINAL SPAN FIX ===== */
+span { color: var(--pure-white); }
+
+/* ===== HAMBURGER MENU ===== */
 @media (max-width: 768px) {
-    .hamburger-label {
-        display: block;
-    }
-    
-    .mobile-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: var(--panel-bg);
-        position: absolute;
-        top: 80px;
-        left: 0;
-        padding: 20px;
-        z-index: 1000;
-        border-bottom: 1px solid var(--panel-border);
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
-    
-    #menu-toggle:checked ~ .mobile-menu {
-        display: flex;
-    }
-    
-    .mobile-menu .instrument-btn {
-        width: 100%;
-        text-align: left;
-        padding: 15px;
-        border-bottom: none;
-        margin: 5px 0;
-    }
+    .hamburger-label { display: block; }
+    .mobile-menu { display: none; flex-direction: column; width: 100%; background: var(--panel-bg); position: absolute; top: 80px; left: 0; padding: 20px; z-index: 1000; border-bottom: 1px solid var(--panel-border); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+    #menu-toggle:checked ~ .mobile-menu { display: flex; }
+    .mobile-menu .instrument-btn { width: 100%; text-align: left; padding: 15px; border-bottom: none; margin: 5px 0; }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
-    .dashboard-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .energy-section,
-    .symptoms-panel,
-    .metrics-panel,
-    .actions-panel {
-        grid-column: 1;
-    }
+    .dashboard-container { grid-template-columns: 1fr; }
+    .energy-section, .symptoms-panel, .metrics-panel, .actions-panel { grid-column: 1; }
 }
 
 @media (max-width: 768px) {
-    .dashboard-header {
-        padding: 15px;
-    }
-    
-    .health-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-    }
-    
-    .dash-title {
-        font-size: 22px;
-    }
-    
-    .instrument-btn {
-        padding: 15px;
-        font-size: 14px;
-    }
-    
-    .dashboard-container {
-        padding: 20px;
-    }
-    
-    .symptoms-grid,
-    .metrics-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .gauge-circle {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .gauge-circle::before {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .gauge-value {
-        font-size: 32px;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .attributions-container {
-        padding: 20px;
-    }
+    .dashboard-header { padding: 15px; }
+    .health-icon { width: 50px; height: 50px; font-size: 24px; }
+    .dash-title { font-size: 22px; }
+    .instrument-btn { padding: 15px; font-size: 14px; }
+    .dashboard-container { padding: 20px; }
+    .symptoms-grid, .metrics-grid { grid-template-columns: 1fr; }
+    .gauge-circle { width: 150px; height: 150px; }
+    .gauge-circle::before { width: 120px; height: 120px; }
+    .gauge-value { font-size: 32px; }
+    .footer-content { flex-direction: column; gap: 10px; }
+    .attributions-container { padding: 20px; }
 }
 
 @media (max-width: 480px) {
-    .dashboard-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-    
-    .instrument-nav {
-        flex-direction: column;
-    }
-    
-    .instrument-btn {
-        width: 100%;
-        text-align: center;
-    }
-}
-/* ATTRIBUTIONS PAGE CONTRAST FIX */
-.attribution-item, .attribution-item * {
-    background-color: #112240 !important;
-}
-
-.attribution-item {
-    border: 1px solid var(--panel-border) !important;
-}
-/* ===== UNIVERSAL CONTRAST FIX - BOTH PAGES ===== */
-
-/* Fix all semi-transparent backgrounds to solid dark */
-.symptom-item, .metric-item, .attribution-item,
-.recommendations, .fatigue-warning, button.instrument-btn.active,
-div[class*="symptom"], div[class*="metric"], div[class*="attribution"] {
-    background-color: #1e3a5f !important;
-    border: 1px solid var(--panel-border) !important;
-}
-
-/* Fix specific elements that need different backgrounds */
-.fatigue-warning {
-    background-color: rgba(255, 153, 102, 0.2) !important;
-    border: 2px solid #ff9966 !important;
-}
-
-.recommendations {
-    background-color: rgba(107, 207, 127, 0.2) !important;
-    border: 1px solid #6bcf7f !important;
-}
-
-.recommendations li {
-    background-color: rgba(107, 207, 127, 0.25) !important;
-    margin: 8px 0 !important;
-    padding: 8px 8px 8px 25px !important;
-}
-
-button.instrument-btn.active {
-    background-color: rgba(107, 207, 127, 0.25) !important;
-    border-bottom: 3px solid #6bcf7f !important;
-}
-
-/* Ensure all text is pure white on solid backgrounds */
-.symptom-item, .metric-item, .attribution-item,
-.symptom-name, .metric-value, .attribution-description,
-.fatigue-warning p, .recommendations li {
-    color: #ffffff !important;
-}
-
-/* Preserve colored elements */
-.metric-value.poor { color: #ffb3b3 !important; }
-.metric-value.high { color: #ffcc99 !important; }
-.metric-value.good { color: #b3ffb3 !important; }
-.metric-value.medium { color: #b3d9ff !important; }
-.warning-icon { color: #ff9966 !important; }
-.fatigue-warning strong { color: #ffb3b3 !important; }
-.footer-link { color: #86efac !important; }
-.instrument-btn.active { color: #6bcf7f !important; }
-.attribution-title { color: #6bcf7f !important; }
-.dash-title span { color: #6bcf7f !important; }
-/* FINAL SPAN FIX FOR BOTH PAGES */
-span {
-    color: #ffffff !important;
-}
-/* FINAL SPAN FIX FOR BOTH PAGES */
-span {
-    color: #ffffff !important;
+    .dashboard-header { flex-direction: column; text-align: center; gap: 15px; }
+    .instrument-nav { flex-direction: column; }
+    .instrument-btn { width: 100%; text-align: center; }
 }
